@@ -1,15 +1,15 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import config from './modules/config'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import config from './modules/config';
 
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const store = new Vuex.Store({
-  modules: {
-    config,
+    modules: {
+      config,
   },
   
-})
+});
 
-export default store
+export default store;

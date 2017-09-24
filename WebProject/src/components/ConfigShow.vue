@@ -15,7 +15,6 @@ export default {
             let self = this;
 
             this.ajax.post('/config/delete?id=' + id).then(result => {
-                console.log(result);
                 if (result.code == 0) {
                     this.info('delete success');
 

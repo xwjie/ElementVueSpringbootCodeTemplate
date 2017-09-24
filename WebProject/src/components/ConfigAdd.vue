@@ -25,7 +25,6 @@ export default {
         onSubmit() {
             let self = this;
             this.ajax.post('/config/add', this.$data.form).then(result => {
-                console.log(result);
                 if (result.code == 0) {
                     self.info('add success, new id:' + result.data);
                 }

@@ -1,5 +1,7 @@
 import axios from 'axios';
 import env from '../config/env';
+import Vue from 'vue';
+
 
 let util = {
 
@@ -15,7 +17,7 @@ const ajaxUrl = env === 'development' ?
         'https://www.url.com' :
         'https://debug.url.com';
 
-let ajax = axios.create({
+let axiosInstance = axios.create({
     baseURL: ajaxUrl,
     timeout: 30000
 });
@@ -23,25 +25,57 @@ let ajax = axios.create({
 /*
  * 返回Response的data（即json数据）
  */
-function handlerData(response) { 
+function handlerData(response) {
+    // 全局的没有登录异常单独处理
+    //if (response.data.code === -1) {
+    //    console.log('no login');
+    // 还没有找到中断promise好的办法
+    //}
+
+    console.log(response.data);
+
+    return response.data;
+}
+
+//添加一个返回拦截器
+axiosInstance.interceptors.response.use(function (response) {
+    //对返回的数据进行一些处理
+
     // 全局的没有登录异常单独处理
     if (response.data.code === -1) {
         console.log('no login');
-        
+
+        Vue.bus.emit('login-open');
+
         // 还没有找到中断promise好的办法
-    } 
-    
-    return response.data;
-}
+        return Promise.reject('ERROR_NOLOGIN');
+    }
+
+    return response;
+}, function (error) {
+    //对返回的错误进行一些处理
+    return Promise.reject(error);
+});
 
 util.ajax = {};
 
 util.ajax.post = function () {
-    return ajax.post.apply(this, arguments).then(handlerData);
+    return axiosInstance.post.apply(this, arguments).then(handlerData)
+}
+
+util.ajax.postForm = function (url, data) {
+    return axiosInstance.post(url, data, {
+        transformRequest: [function (data) {
+            return 'username=xxx&password=xwjie';
+        }],
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    }).then(handlerData)
 }
 
 util.ajax.get = function () {
-    return ajax.get.apply(this, arguments).then(handlerData);
+    return axiosInstance.get.apply(this, arguments).then(handlerData);
 }
 
 export default util;

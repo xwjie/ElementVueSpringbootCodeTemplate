@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>SpringbootCodeTemplate</name>
-	<description>Demo project for Spring Boot</description>
+	<description>晓风轻springboot+vue+element代码模板</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -71,6 +71,14 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.31</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

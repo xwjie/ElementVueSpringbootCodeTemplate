@@ -25,20 +25,26 @@ Vue.use(Vuex);
 Vue.use(VueI18n);
 
 // 工具类
-Vue.prototype.info = function(msg){
+Vue.prototype.info = function (msg) {
     this.$message(msg);
 }
 
-Vue.prototype.error = function(msg){
-    this.$message({type:'error', message:msg});
+Vue.prototype.error = function (msg) {
+    this.$message({ type: 'error', message: msg });
 }
 
-Vue.prototype.ajax =  Util.ajax;
+Vue.prototype.ajax = Util.ajax;
 
 //
-import {ConfigAdd,ConfigShow} from './components';
-Vue.component('ConfigAdd',  ConfigAdd);
-Vue.component('ConfigShow',  ConfigShow);
+import { ConfigAdd, ConfigShow, Table, LoginDialog } from './components';
+Vue.component('ConfigAdd', ConfigAdd);
+Vue.component('ConfigShow', ConfigShow);
+Vue.component('Table', Table);
+Vue.component('LoginDialog', LoginDialog);
+
+// event bus
+import VueBus from 'vue-bus';
+Vue.use(VueBus);
 
 // 自动设置语言
 const navLang = navigator.language;
@@ -59,7 +65,7 @@ const RouterConfig = {
 };
 const router = new VueRouter(RouterConfig);
 
-let loading ;
+let loading;
 
 router.beforeEach((to, from, next) => {
     loading = UI.Loading.service({ fullscreen: true });
