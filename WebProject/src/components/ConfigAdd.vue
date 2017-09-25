@@ -27,6 +27,8 @@ export default {
             this.ajax.post('/config/add', this.$data.form).then(result => {
                 if (result.code == 0) {
                     self.info('add success, new id:' + result.data);
+
+                    self.$store.dispatch('config/reload');
                 }
                 else {
                     self.error(result.msg);

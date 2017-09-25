@@ -1,6 +1,7 @@
 import axios from 'axios';
 import env from '../config/env';
 import Vue from 'vue';
+import param from './param'
 
 
 let util = {
@@ -19,7 +20,8 @@ const ajaxUrl = env === 'development' ?
 
 let axiosInstance = axios.create({
     baseURL: ajaxUrl,
-    timeout: 30000
+    timeout: 30000,
+    withCredentials: true
 });
 
 /*
@@ -65,9 +67,7 @@ util.ajax.post = function () {
 
 util.ajax.postForm = function (url, data) {
     return axiosInstance.post(url, data, {
-        transformRequest: [function (data) {
-            return 'username=xxx&password=xwjie';
-        }],
+        transformRequest: [param],
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
