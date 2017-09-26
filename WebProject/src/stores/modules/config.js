@@ -15,14 +15,14 @@ const config = {
     actions: {
         reload({ state, commit, rootState }) {
             util.ajax.get('/config/all').then(result => {
-                console.log(result);
                 if (result.code == 0) {
+                    //提交数据修改
                     commit('reload', result.data);
                 }
                 else {
-                    //FIXME this.error(result.msg);
+                    //FIXME module中出错如何提示合理？ this.error(result.msg);
                 }
-            })
+            });
         }
     }
 }

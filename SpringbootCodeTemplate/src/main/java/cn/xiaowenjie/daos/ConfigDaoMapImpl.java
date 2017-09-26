@@ -41,7 +41,7 @@ public class ConfigDaoMapImpl implements ConfigDao {
 		check(null == getByName(config.getName()), "name.repeat");
 
 		// 创建用户
-		config.setCreator(UserUtil.getUser());
+		config.setCreator(UserUtil.getUserId());
 
 		long id = idSequence.incrementAndGet();
 
@@ -88,7 +88,7 @@ public class ConfigDaoMapImpl implements ConfigDao {
 	 * @return
 	 */
 	private boolean canDelete(Config config) {
-		return UserUtil.getUser().equals(config.getCreator());
+		return UserUtil.getUserId() == config.getCreator();
 	}
 
 }

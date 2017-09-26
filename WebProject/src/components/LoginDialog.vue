@@ -23,22 +23,22 @@ export default {
     data() {
         return {
             form: {
-                username: '晓风轻',
-                password: '密码是xwjie'
+                username: 'xwjie',
+                password: '晓风轻'
             },
             formLabelWidth: '120px',
         };
     },
     methods: {
         doLogin() {
-            console.log('login:', this.$data.form);
+            console.log('login: ', this.form);
 
             let self = this;
             //
-            this.ajax.postForm('/app/login', this.$data.form).then(result => {
+            this.ajax.postForm('/app/login', this.form).then(result => {
                 if (result.code == 0) {
                     // 发送登录成功消息
-                    self.$bus.emit('login-success');
+                    self.$bus.emit('login-success', result.data);
                 }
                 else {
                     self.error(result.msg);

@@ -1,4 +1,11 @@
-export default function (a) {
+/**
+ * 把json对象序列化成表单格式（如：name=xiao&password=xwjie）
+ * 
+ * https://github.com/xwjie/ElementVueSpringbootCodeTemplate
+ * 
+ * @param {*} obj
+ */
+export default function (obj) {
     var s = [], rbracket = /\[\]$/,
         isArray = function (obj) {
             return Object.prototype.toString.call(obj) === '[object Array]';
@@ -36,5 +43,5 @@ export default function (a) {
             return s;
         };
 
-    return buildParams('', a).join('&').replace(/%20/g, '+');
-};
+    return buildParams('', obj).join('&').replace(/%20/g, '+');
+}

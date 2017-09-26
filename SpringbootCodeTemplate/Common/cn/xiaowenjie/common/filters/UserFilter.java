@@ -13,6 +13,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import cn.xiaowenjie.beans.User;
 import cn.xiaowenjie.common.utils.UserUtil;
 
 /**
@@ -46,7 +47,7 @@ public class UserFilter implements Filter {
 
 	private void fillUserInfo(HttpServletRequest request) {
 		// 用户信息
-		String user = getUserFromSession(request);
+		User user = getUserFromSession(request);
 
 		if (user != null) {
 			UserUtil.setUser(user);
@@ -76,7 +77,7 @@ public class UserFilter implements Filter {
 		return null;
 	}
 
-	private String getUserFromSession(HttpServletRequest request) {
+	private User getUserFromSession(HttpServletRequest request) {
 		//TODO 如果不参加session，model.addAttribute(UserUtil.KEY_USER, username);报错
 		HttpSession session = request.getSession(true);
 
@@ -85,7 +86,7 @@ public class UserFilter implements Filter {
 		}
 
 		// 从session中获取用户信息放到工具类中
-		return (String) session.getAttribute(UserUtil.KEY_USER);
+		return (User) session.getAttribute(UserUtil.KEY_USER);
 	}
 
 	@Override

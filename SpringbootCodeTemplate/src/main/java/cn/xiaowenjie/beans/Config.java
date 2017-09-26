@@ -14,7 +14,7 @@ public class Config implements Serializable {
 	private long id;
 	
 	/**
-	 * 创建者，demo使用字符串，实际上应该用对象id
+	 * 创建者
 	 */
-	private String creator;
+	private long creator;
 }

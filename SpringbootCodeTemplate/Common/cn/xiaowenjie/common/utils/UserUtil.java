@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import org.apache.log4j.MDC;
 
+import cn.xiaowenjie.beans.User;
 import cn.xiaowenjie.common.exceptions.UnloginException;
 
 /**
@@ -14,7 +15,7 @@ import cn.xiaowenjie.common.exceptions.UnloginException;
  */
 public class UserUtil {
 
-	private final static ThreadLocal<String> tlUser = new ThreadLocal<String>();
+	private final static ThreadLocal<User> tlUser = new ThreadLocal<User>();
 
 	private final static ThreadLocal<Locale> tlLocale = new ThreadLocal<Locale>() {
 		protected Locale initialValue() {
@@ -27,11 +28,11 @@ public class UserUtil {
 
 	public static final String KEY_USER = "user";
 
-	public static void setUser(String userid) {
-		tlUser.set(userid);
+	public static void setUser(User user) {
+		tlUser.set(user);
 
 		// 把用户信息放到log4j
-		MDC.put(KEY_USER, userid);
+		MDC.put(KEY_USER, user.getUsername());
 	}
 
 	/**
@@ -39,7 +40,7 @@ public class UserUtil {
 	 * 
 	 * @return
 	 */
-	public static String getUserIfLogin() {
+	public static User getUserIfLogin() {
 		return tlUser.get();
 	}
 
@@ -48,14 +49,18 @@ public class UserUtil {
 	 * 
 	 * @return
 	 */
-	public static String getUser() {
-		String user = tlUser.get();
+	public static User getUser() {
+		User user = tlUser.get();
 
 		if (user == null) {
 			throw new UnloginException();
 		}
 
 		return user;
+	}
+	
+	public static long getUserId(){
+		return getUser().getId();
 	}
 
 	public static void setLocale(String locale) {

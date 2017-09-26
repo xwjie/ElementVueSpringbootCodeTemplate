@@ -3,10 +3,10 @@ import env from '../config/env';
 import Vue from 'vue';
 import param from './param'
 
-
 let util = {
 
 };
+
 util.title = function (title) {
     title = title ? title + ' - Home' : 'Element Vue Springboot CodeTemplate project';
     window.document.title = title;
@@ -47,6 +47,7 @@ axiosInstance.interceptors.response.use(function (response) {
     if (response.data.code === -1) {
         console.log('no login');
 
+        // 通知打开登录窗口
         Vue.bus.emit('login-open');
 
         // 还没有找到中断promise好的办法

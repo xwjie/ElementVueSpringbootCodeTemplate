@@ -5,14 +5,18 @@
 </style>
 <template>
     <div class="index">
-        <h1>Element Vue Springboot CodeTemplate</h1>
-        <el-button type="primary" @click="handleStart">Hello World</el-button>
+        <h1>Element Vue Springboot CodeTemplate
+            <el-button type="primary" @click="handleStart">Hello World</el-button>
+        </h1>
+
+        <h2 v-if="user != null">当前用户：{{user.nick}}
+            <el-button type="danger" @click="logout">退出</el-button>
+        </h2>
+
         <hr/>
         <ConfigAdd/>
         <ConfigShow/>
-        <!--
-        <Table showIndex=true showSelecet=true showSummary=true />
-        -->
+
         <LoginDialog :show='showLogin' />
     </div>
 </template>
@@ -27,23 +31,37 @@ export default {
         this.$bus.on('login-success', this.loginSuccess);
         this.$bus.on('login-cancel', this.loginCancel);
     },
-    data(){
+    data() {
         return {
-            showLogin: false
+            showLogin: false,
+            user: null
         }
     },
     methods: {
         handleStart() {
             this.info('工作正常');
         },
-        loginOpen(){
-            this.$data.showLogin = true;
+        loginOpen() {
+            this.showLogin = true;
         },
-        loginSuccess(){
-            this.$data.showLogin = false;
+        loginSuccess(user) {
+            console.log('success', user);
+            
+            this.showLogin = false;
+            this.user = user;
         },
-        loginCancel(){
-            this.$data.showLogin = false;
+        loginCancel() {
+            this.showLogin = false;
+        },
+        logout() {
+            this.ajax.post('/app/logout').then(result => {
+                if (result.code == 0) {
+                    self.user = null;
+                }
+                else {
+                    self.error(result.msg);
+                }
+            })
         }
     },
 };

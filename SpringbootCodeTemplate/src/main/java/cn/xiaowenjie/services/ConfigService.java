@@ -12,6 +12,12 @@ import org.springframework.stereotype.Service;
 import cn.xiaowenjie.beans.Config;
 import cn.xiaowenjie.daos.ConfigDao;
 
+/**
+ * 配置业务处理类
+ * 
+ * @author 肖文杰 https://github.com/xwjie/
+ *
+ */
 @Service
 public class ConfigService {
 

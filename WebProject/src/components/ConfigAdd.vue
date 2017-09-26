@@ -16,15 +16,15 @@ export default {
     data() {
         return {
             form: {
-                name: '默认的配置项名称',
-                value: '默认的配置项值'
+                name: '晓风轻',
+                value: 'https://github.com/xwjie'
             }
         }
     },
     methods: {
         onSubmit() {
             let self = this;
-            this.ajax.post('/config/add', this.$data.form).then(result => {
+            this.ajax.post('/config/add', this.form).then(result => {
                 if (result.code == 0) {
                     self.info('add success, new id:' + result.data);
 
