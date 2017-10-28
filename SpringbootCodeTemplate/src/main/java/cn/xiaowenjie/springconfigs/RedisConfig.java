@@ -56,7 +56,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 
 		Map<String, Long> expires = new HashMap<>();
 
-		expires.put(CacheNames.CONFIG, 60L);
+		expires.put(CacheNames.CONFIG, 600L);
 
 		// 设置超时
 		cacheManager.setExpires(expires);

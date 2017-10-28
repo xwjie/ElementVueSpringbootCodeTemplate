@@ -31,9 +31,12 @@ spring:
 public class RedisConfig extends CachingConfigurerSupport
 ```
 
-在类里面配置 `RestTemplate` ，需要配置key和value的序列化类，
+在类里面配置 `RestTemplate` ，需要配置key和value的序列化类。
+
 key序列化使用`StringRedisSerializer`, 不配置的话key前面会出现乱码。
+
 value序列化使用 `GenericJackson2JsonRedisSerializer` ，保存为Json格式。该类目前反序列化还有一些bug，只能反序列化实现了Serialize的类。
+
 
 ```Java
 @Bean
@@ -60,6 +63,7 @@ public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factor
 }
 ```
 
+
 配置 CacheManager，包括指定缓存和默认缓存的超时时间的配置。
 
 ```Java
@@ -80,6 +84,7 @@ public CacheManager cacheManager(RedisTemplate redisTemplate) {
   return cacheManager;
 }
 ```
+
 
 重写 `keyGenerator`，可以支持使用@Cacheable不指定Key。
 
@@ -159,6 +164,17 @@ public class ClearCacheTask {
 }
 ```
 
+# redis 怎么样保存cache
+
+增加2条数据，一个是类型为 `zset` 的 `缓存名~keys` , 里面存放了该缓存所有的key， 一个是对应的key，值为序列化后的json。
+
+`zset` 是带权重的有序集合，可以使用 `zrange config~keys -1 1 withscores` 查看元素，新加入的都是 0.0 。使用 ` zcount config~keys -1 1` 查看个数。
+
+可以使用 `ttl` 命令查看超时时间。
+
+![redis console](/pictures/redisconsole.png) 
+
+
 # 安装redis
 
 https://github.com/MicrosoftArchive/redis/releases 下载最新版本，3.2
@@ -170,10 +186,11 @@ redis-server.exe redis.windows.conf
 
 也可以使用 [Redis Client](https://github.com/caoxinyu/RedisClient) 查看。
 
+![redis client](/pictures/redisclient.png) 
 
 # redis 比较重要命令
 * keys * / keys cn* 查看数据
-* type keyname 查看数据类
+* type keyname 查看数据类型
 * dbsize 查看记录数
 * flushdb 删除【当前数据库】所有记录
 * flushall 删除所有数据库里面的所有数据，注意不是当前数据库，而是所有数据库。

@@ -17,7 +17,7 @@ public class ClearCacheTask {
 	/**
 	 * 定时清空缓存
 	 */
-	@Scheduled(fixedRate = 60 * 1000L)
+	@Scheduled(fixedRate = 60 * 60 * 1000L)
 	@CacheEvict(value = { CacheNames.CONFIG }, allEntries = true)
 	public void clearCaches() {
 		System.out.println("\n------------ clear caches ------------\n");
