@@ -2,21 +2,26 @@ package cn.xiaowenjie.daos;
 
 import static cn.xiaowenjie.common.utils.CheckUtil.check;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 import javax.annotation.PostConstruct;
 
+import org.aspectj.weaver.tools.Trace;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import cn.xiaowenjie.beans.Config;
+import cn.xiaowenjie.caches.CacheNames;
 import cn.xiaowenjie.common.utils.UserUtil;
 
 /**
  * 使用map实现的示例
  * 
- * @author 肖文杰
+ * @author 肖文杰  https://github.com/xwjie
  */
 @Component
 public class ConfigDaoMapImpl implements ConfigDao {
@@ -30,11 +35,14 @@ public class ConfigDaoMapImpl implements ConfigDao {
 
 	}
 
+	@Cacheable(CacheNames.CONFIG)
 	@Override
 	public Collection<Config> getAll() {
-		return configs.values();
+		System.out.println("\n----------GetAll----------\n");
+		return new ArrayList<>(configs.values());
 	}
 
+	@CacheEvict(value = CacheNames.CONFIG, allEntries = true)
 	@Override
 	public long add(Config config) {
 		// 检查名称是否重复
@@ -67,6 +75,7 @@ public class ConfigDaoMapImpl implements ConfigDao {
 	/**
 	 * 删除配置项
 	 */
+	@CacheEvict(value = CacheNames.CONFIG, allEntries = true)
 	@Override
 	public boolean delete(long id) {
 		Config config = configs.get(id);

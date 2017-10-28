@@ -22,7 +22,7 @@
 	<b>(只演示后台国际化)</b>
 	<hr />
 
-	<form id="formConfig" action="config/add" method="post">
+	<form id="formConfig" action="config/add2" method="post">
 		配置项名称：<input name="name"><br /> 配置项取值：<input name="value"><br />
 		<button type="submit">提交</button>
 	</form>
@@ -51,7 +51,7 @@
 	<script src="resources/lib/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript">
 		function loginDone(data) {
-			$("#userinfo").html("当前登录用户：" + data);
+			$("#userinfo").html("当前登录用户：" + data.nick);
 		}
 
 		function switchLang(lang) {
