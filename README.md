@@ -1,6 +1,34 @@
 # ElementVueSpringbootCodeTemplate
 使用Vue+VueX+ElementUI+SpringBoot的代码框架
 
+# ElementUI升级到2.0.2 (2017.11.02)
+
+先升级vue到2.5.2，在升级elementui
+
+```
+npm update fsevents
+npm update vue
+npm update vue-template-compiler
+
+npm uninstall element-ui
+npm install element-ui@2.0.2 -S
+```
+
+修改elementui的css路径：
+
+```
+import 'element-ui/lib/theme-default/index.css'
+```
+
+改为
+
+```
+import 'element-ui/lib/theme-chalk/index.css'
+```
+
+done.
+
+
 # 增加redis依赖
 
 ```
@@ -23,7 +51,7 @@ spring:
 
 # 配置redis
 
-继承CachingConfigurerSupport，需要重写 `keyGenerator` 方法。
+继承CachingConfigurerSupport，增加 `@EnableCaching` 注解，需要重写 `keyGenerator` 方法。
 
 ```Java
 @Configuration
@@ -170,7 +198,7 @@ public class ClearCacheTask {
 
 `zset` 是带权重的有序集合，可以使用 `zrange config~keys -1 1 withscores` 查看元素，新加入的都是 0.0 。使用 ` zcount config~keys -1 1` 查看个数。
 
-可以使用 `ttl` 命令查看超时时间。
+可以使用 `ttl` 命令查看超时时间，单位为秒。
 
 ![redis console](/pictures/redisconsole.png) 
 
