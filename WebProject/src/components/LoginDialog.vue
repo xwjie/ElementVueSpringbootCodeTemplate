@@ -1,4 +1,4 @@
-<<template>
+<template>
 
 <el-dialog title="请登录" :visible.sync="show">
   <el-form :model="form">
