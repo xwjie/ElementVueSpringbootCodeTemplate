@@ -1,15 +1,9 @@
 package cn.xiaowenjie.daos;
 
-import java.util.Collection;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import cn.xiaowenjie.beans.Config;
 
-public interface ConfigDao {
-
-	Collection<Config> getAll();
-
-	long add(Config config);
-
-	boolean delete(long id);
-
+public interface ConfigDao extends PagingAndSortingRepository<Config, Long> {
+	Config findByName(String name);
 }

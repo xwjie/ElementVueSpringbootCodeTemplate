@@ -4,5 +4,23 @@ spring:
   redis:
     host: localhost
     port: 6379
+  datasource:
+    url: jdbc:h2:file:~/mydb.h2
+    #url: jdbc:h2:mem:mydb
+    username: sa
+    password: sa
+    driverClassName: org.h2.Driver
+  jpa:
+    database: h2
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+        trace: true
 server:
   port: 8080
