@@ -36,10 +36,10 @@ Vue.prototype.error = function (msg) {
 Vue.prototype.ajax = Util.ajax;
 
 //
-import { ConfigAdd, ConfigShow, Table, LoginDialog } from './components';
+import { ConfigAdd, ConfigShow, ConfigTable,  LoginDialog } from './components';
 Vue.component('ConfigAdd', ConfigAdd);
 Vue.component('ConfigShow', ConfigShow);
-Vue.component('Table', Table);
+Vue.component('ConfigTable', ConfigTable);
 Vue.component('LoginDialog', LoginDialog);
 
 // event bus

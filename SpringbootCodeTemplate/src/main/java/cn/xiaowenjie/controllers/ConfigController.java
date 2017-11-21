@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cn.xiaowenjie.beans.Config;
+import cn.xiaowenjie.common.beans.PageReq;
+import cn.xiaowenjie.common.beans.PageResp;
 import cn.xiaowenjie.common.beans.ResultBean;
 import cn.xiaowenjie.services.ConfigService;
 
@@ -33,6 +35,11 @@ public class ConfigController {
 	@GetMapping("/all")
 	public ResultBean<Collection<Config>> getAll() {
 		return new ResultBean<Collection<Config>>(configService.getAll());
+	}
+
+	@GetMapping(value = "/list")
+	public ResultBean<PageResp<Config>> list(PageReq param) {
+		return new ResultBean<>(configService.listPage(param.toPageable()));
 	}
 
 	/**

@@ -10,11 +10,13 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.google.common.collect.Lists;
 
 import cn.xiaowenjie.beans.Config;
+import cn.xiaowenjie.common.beans.PageResp;
 import cn.xiaowenjie.daos.ConfigDao;
 
 /**
@@ -72,5 +74,9 @@ public class ConfigService {
 		logger.info("delete config success, id:" + id);
 
 		return true;
+	}
+
+	public PageResp<Config> listPage(Pageable pageable) {
+		return new PageResp<Config>(dao.findAll(pageable));
 	}
 }

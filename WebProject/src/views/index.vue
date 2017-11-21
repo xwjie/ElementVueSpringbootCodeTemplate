@@ -16,6 +16,7 @@
         <hr/>
         <ConfigAdd/>
         <ConfigShow/>
+        <ConfigTable/>
 
         <LoginDialog :show='showLogin' />
     </div>
