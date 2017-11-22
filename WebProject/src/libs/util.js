@@ -79,4 +79,21 @@ util.ajax.get = function () {
     return axiosInstance.get.apply(this, arguments).then(handlerData);
 }
 
+/**
+ * 对象是否包含指定关键字 key
+ */
+util.isMatch = function(e, key){
+    var props = ['name', 'value', 'description'];
+
+    for(var i in props){
+        var field = e[props[i]];
+
+        if(field && field.indexOf(key) > -1){
+            return true;
+        }
+    }
+
+    return false;
+}
+
 export default util;

@@ -1,8 +1,9 @@
 <template>
   <div>
   <el-table
-    :data="configs.rows"
+    :data="configs.rows | filterKeyword(keyword)"
     border
+    stripe
     style="width: 100%">
     <el-table-column
       fixed
@@ -55,18 +56,27 @@
 <script>
 import { mapState } from "vuex";
 export default {
+  props: ["keyword"],
+  mounted() {
+    this.refreshConfig();
+  },
   methods: {
     handleClick(row) {
       console.log(row);
     },
     refreshConfig() {
-      this.ajax.get("/config/list").then(result => {
-        if (result.code == 0) {
-          this.configs = result.data;
-        } else {
-          //FIXME module中出错如何提示合理？ this.error(result.msg);
-        }
-      });
+      this.ajax
+        .get("/config/list", {
+          page: this.configs.page,
+          pagesize: this.configs.pagesize
+        })
+        .then(result => {
+          if (result.code == 0) {
+            this.configs = result.data;
+          } else {
+            //FIXME module中出错如何提示合理？ this.error(result.msg);
+          }
+        });
     }
   },
   data() {

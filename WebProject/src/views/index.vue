@@ -1,6 +1,6 @@
 <style scoped>
 .index {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 </style>
 <template>
@@ -15,55 +15,59 @@
 
         <hr/>
         <ConfigAdd/>
-        <ConfigShow/>
-        <ConfigTable/>
+        <el-input
+            placeholder="请输入内容"
+            prefix-icon="el-icon-search"
+            v-model="keyword">
+        </el-input>
+        <p/>
+        <ConfigTable :keyword='keyword'/>
 
         <LoginDialog :show='showLogin' />
     </div>
 </template>
 <script>
-
 export default {
-    created() {
-        // 载入config数据
-        this.$store.dispatch('config/reload');
+  created() {
+    // 载入config数据
+    this.$store.dispatch("config/reload");
 
-        this.$bus.on('login-open', this.loginOpen);
-        this.$bus.on('login-success', this.loginSuccess);
-        this.$bus.on('login-cancel', this.loginCancel);
+    this.$bus.on("login-open", this.loginOpen);
+    this.$bus.on("login-success", this.loginSuccess);
+    this.$bus.on("login-cancel", this.loginCancel);
+  },
+  data() {
+    return {
+      showLogin: false,
+      user: null,
+      keyword:''
+    };
+  },
+  methods: {
+    handleStart() {
+      this.info("工作正常");
     },
-    data() {
-        return {
-            showLogin: false,
-            user: null
+    loginOpen() {
+      this.showLogin = true;
+    },
+    loginSuccess(user) {
+      console.log("success", user);
+
+      this.showLogin = false;
+      this.user = user;
+    },
+    loginCancel() {
+      this.showLogin = false;
+    },
+    logout() {
+      this.ajax.post("/app/logout").then(result => {
+        if (result.code == 0) {
+          self.user = null;
+        } else {
+          self.error(result.msg);
         }
-    },
-    methods: {
-        handleStart() {
-            this.info('工作正常');
-        },
-        loginOpen() {
-            this.showLogin = true;
-        },
-        loginSuccess(user) {
-            console.log('success', user);
-            
-            this.showLogin = false;
-            this.user = user;
-        },
-        loginCancel() {
-            this.showLogin = false;
-        },
-        logout() {
-            this.ajax.post('/app/logout').then(result => {
-                if (result.code == 0) {
-                    self.user = null;
-                }
-                else {
-                    self.error(result.msg);
-                }
-            })
-        }
-    },
+      });
+    }
+  }
 };
 </script>

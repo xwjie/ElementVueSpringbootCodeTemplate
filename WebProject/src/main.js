@@ -42,6 +42,12 @@ Vue.component('ConfigShow', ConfigShow);
 Vue.component('ConfigTable', ConfigTable);
 Vue.component('LoginDialog', LoginDialog);
 
+// 定义全局filter
+Vue.filter('filterKeyword', function (value, key) {
+    if (!key) return value;
+    return value.filter(e => Util.isMatch(e, key));
+});
+
 // event bus
 import VueBus from 'vue-bus';
 Vue.use(VueBus);
