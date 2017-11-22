@@ -36,14 +36,14 @@
       width="100">
       <template slot-scope="scope">
         <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-        <el-button type="text" size="small">编辑</el-button>
+        <el-button @click="deleteConfig(scope.row)" type="text" size="small"><i class="el-icon-delete"></i></el-button>
       </template>
     </el-table-column>
   </el-table>
 
     <el-pagination
-      @size-change="refreshConfig"
-      @current-change="refreshConfig"
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
       :current-page="configs.page"
       :page-sizes="[5, 10, 50, 100]"
       :page-size="configs.pagesize"
@@ -64,11 +64,33 @@ export default {
     handleClick(row) {
       console.log(row);
     },
+    deleteConfig(row) {
+      let self = this;
+
+      this.ajax.post("/config/delete?id=" + row.id).then(result => {
+        if (result.code == 0) {
+          this.info("delete success");
+          this.refreshConfig();
+        } else {
+          this.error(result.msg);
+        }
+      });
+    },
+    handleSizeChange(val) {
+      this.configs.pagesize = val;
+      this.refreshConfig();
+    },
+    handleCurrentChange(val) {
+      this.configs.page = val;
+      this.refreshConfig();
+    },
     refreshConfig() {
       this.ajax
         .get("/config/list", {
-          page: this.configs.page,
-          pagesize: this.configs.pagesize
+          params: {
+            page: this.configs.page,
+            pagesize: this.configs.pagesize
+          }
         })
         .then(result => {
           if (result.code == 0) {
@@ -83,8 +105,8 @@ export default {
     return {
       configs: {
         rows: [],
-        page: 0,
-        pagesize: 50,
+        page: 1,
+        pagesize: 10,
         total: 0
       }
     };

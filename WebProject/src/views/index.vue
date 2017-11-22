@@ -5,7 +5,7 @@
 </style>
 <template>
     <div class="index">
-        <h1>Element Vue Springboot CodeTemplate
+        <h1>晓风轻 Element Vue Springboot 代码模板
             <el-button type="primary" @click="handleStart">Hello World</el-button>
         </h1>
 
