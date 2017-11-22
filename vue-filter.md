@@ -1,5 +1,3 @@
-# 使用filter
-
 # 定义filter
 
 [官方文档](https://cn.vuejs.org/v2/guide/filters.html) 。 这里定义的是全局的，也可以定义局部的。
@@ -38,8 +36,7 @@ util.isMatch = function(e, key){
 给要过滤的组件传入 `keyword`
 
 ```JavaScript
-
- <el-input
+<el-input
     placeholder="请输入内容"
     prefix-icon="el-icon-search"
     v-model="keyword">
@@ -49,7 +46,7 @@ util.isMatch = function(e, key){
 
 ```
 
-组件 `ConfigTable` 中增加 `keyword` property。
+组件 `ConfigTable` 中增加 `keyword` props。
 
 ```JavaScript
 export default {
@@ -58,7 +55,7 @@ export default {
 }
 ```
 
-`ConfigTable` 中需要过滤的控件上增加 `filterKeyword(keyword)` 。
+`ConfigTable` 中需要过滤的控件`el-table`上增加 `filterKeyword(keyword)` 。
 
 ```JavaScript
   <el-table
@@ -71,4 +68,4 @@ export default {
 
 # 效果图
 
-[](/pictures/vue-filter.gif)
+![](/pictures/vue-filter.gif)
