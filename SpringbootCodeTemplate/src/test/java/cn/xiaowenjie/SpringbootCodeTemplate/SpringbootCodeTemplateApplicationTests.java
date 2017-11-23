@@ -27,8 +27,8 @@ public class SpringbootCodeTemplateApplicationTests {
 			Config config = new Config();
 
 			config.setName("测试数据：" + i);
-			config.setValue("配置项值：" + i);
-			config.setDescription("配置项描述：" + i);
+			config.setValue("https://github.com/xwjie");
+			config.setDescription("晓风轻：" + i);
 			configService.add(config);
 		}
 	}

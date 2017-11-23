@@ -16,7 +16,7 @@
         <hr/>
         <ConfigAdd/>
         <el-input
-            placeholder="请输入内容"
+            placeholder="请输入关键字过滤"
             prefix-icon="el-icon-search"
             v-model="keyword">
         </el-input>
@@ -30,7 +30,7 @@
 export default {
   created() {
     // 载入config数据
-    this.$store.dispatch("config/reload");
+    //this.$store.dispatch("config/reload");
 
     this.$bus.on("login-open", this.loginOpen);
     this.$bus.on("login-success", this.loginSuccess);
