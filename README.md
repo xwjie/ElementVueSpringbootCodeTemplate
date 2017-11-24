@@ -1,6 +1,12 @@
 # ElementVueSpringbootCodeTemplate
 使用Vue+VueX+ElementUI+SpringBoot的代码框架。详细讲解：[程序员你为什么这么累？](https://zhuanlan.zhihu.com/p/28705206)
 
+# 2017.11.24 增加swagger2
+
+[增加swagger2](enable-swagger2.md)
+
+http://localhost:8080/swagger-ui.html
+
 # 2017.11.22 增加vue过滤器
 
 [增加vue全局过滤器](vue-filter.md)
