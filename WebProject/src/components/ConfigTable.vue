@@ -5,16 +5,24 @@
  */
 <template>
   <div>
+    <el-input
+        placeholder="请输入关键字过滤"
+        prefix-icon="el-icon-search"
+        v-model="keyword">
+    </el-input>
+    <p/>
     <el-table
-      :data="configs | filterKeyword(keyword)"
+      :data="configs"
       border
       stripe
+      @sort-change="sortChange"
       style="width: 100%">
       <el-table-column
         fixed
         sortable
         prop="id"
         label="ID"
+        
         width="150">
       </el-table-column>
       <el-table-column
@@ -46,17 +54,18 @@
       </el-table-column>
     </el-table>
 
-    <Pagination ref="page1" url="/config/list" :updateData="data => this.configs = data"/>
+    <Pagination ref="page1" url="/config/list" :keyword="keyword" :sort="sort" v-model="configs"/>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
 export default {
-  props: ["keyword"],
   methods: {
     handleClick(row) {
       console.log(row);
+    },
+    sortChange({column, prop, order}){
+      this.sort = {prop, order};
     },
     deleteConfig(row) {
       this.ajax.post("/config/delete?id=" + row.id).then(result => {
@@ -75,7 +84,9 @@ export default {
   },
   data() {
     return {
-      configs: []
+      keyword:"",
+      configs: [],
+      sort: {}
     };
   }
 };

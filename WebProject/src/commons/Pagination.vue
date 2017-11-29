@@ -17,8 +17,29 @@
 
 <script>
 export default {
-  props: ["url", "updateData"],
-  mounted(){
+  props: {
+    url: {
+      type: String,
+      required: true
+    },
+    value: {
+      type: Array,
+      required: true
+    },
+    sort: {
+      type: Object,
+      required: false,
+      default: function(){
+        return {};
+      }
+    },
+    keyword: {
+      type: String,
+      required: false,
+      default: ""
+    }
+  },
+  mounted() {
     this.reload();
   },
   methods: {
@@ -35,7 +56,10 @@ export default {
         .get(this.url, {
           params: {
             page: this.page,
-            pagesize: this.pagesize
+            pagesize: this.pagesize,
+            sortfield: this.sort.prop,
+            sort: this.sort.order,
+            keyword: this.keyword
           }
         })
         .then(result => {
@@ -43,8 +67,8 @@ export default {
             this.page = result.data.page;
             this.pagesize = result.data.pagesize;
             this.total = result.data.total;
-            
-            this.updateData(result.data.rows);
+
+            this.$emit("input", result.data.rows);
           } else {
             this.error(result.msg);
           }
@@ -53,10 +77,18 @@ export default {
   },
   data() {
     return {
-        page: 1,
-        pagesize: 10,
-        total: 0
+      page: 1,
+      pagesize: 10,
+      total: 0
     };
+  },
+  watch: {
+    sort(val) {
+      this.reload();
+    },
+    keyword(val) {
+      this.reload();
+    }
   }
 };
 </script>

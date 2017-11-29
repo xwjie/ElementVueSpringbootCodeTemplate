@@ -39,7 +39,7 @@ public class ConfigController {
 
 	@GetMapping(value = "/list")
 	public ResultBean<PageResp<Config>> list(PageReq param) {
-		return new ResultBean<>(configService.listPage(param.toPageable()));
+		return new ResultBean<>(configService.listPage(param.toPageable(), param.getKeyword()));
 	}
 
 	/**

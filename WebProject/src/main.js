@@ -40,10 +40,9 @@ import Pagination from './commons/Pagination';
 Vue.component('Pagination', Pagination);
 
 //
-import { ConfigAdd, ConfigTable,  LoginDialog } from './components';
-Vue.component('ConfigAdd', ConfigAdd);
-Vue.component('ConfigTable', ConfigTable);
-Vue.component('LoginDialog', LoginDialog);
+import {registerComponents} from './components';
+
+registerComponents();
 
 // 定义全局filter
 Vue.filter('filterKeyword', function (value, key) {

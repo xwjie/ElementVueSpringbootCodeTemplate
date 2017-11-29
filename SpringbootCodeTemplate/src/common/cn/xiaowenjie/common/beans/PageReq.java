@@ -47,7 +47,8 @@ public class PageReq {
 		}
 		else {
 			pageable = new PageRequest(page - 1, pagesize,
-					"desc".equalsIgnoreCase(sort) ? Direction.DESC : Direction.ASC,
+					sort.toLowerCase().startsWith("desc") ? Direction.DESC
+							: Direction.ASC,
 					sortfield);
 		}
 

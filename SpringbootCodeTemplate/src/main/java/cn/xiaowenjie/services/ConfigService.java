@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.google.common.collect.Lists;
 
@@ -76,7 +77,13 @@ public class ConfigService {
 		return true;
 	}
 
-	public PageResp<Config> listPage(Pageable pageable) {
-		return new PageResp<Config>(dao.findAll(pageable));
+	public PageResp<Config> listPage(Pageable pageable, String keyword) {
+		if (StringUtils.isEmpty(keyword)) {
+			return new PageResp<Config>(dao.findAll(pageable));
+		}
+		else {
+			// 也可以用springjpa 的 Specification 来实现查找
+			return new PageResp<>(dao.findAllByKeyword(keyword, pageable));
+		}
 	}
 }
