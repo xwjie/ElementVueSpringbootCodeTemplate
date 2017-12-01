@@ -3,6 +3,18 @@
 
 ![](pictures/main.png)
 
+# 特色
+
+* 前后台一站式代码模板
+
+# 技术点
+
+## 后台
+* SpringBoot
+
+## 前台
+* VUE + VUEX + ElementUI
+
 # 2017.11.24 增加swagger2
 
 [增加swagger2](enable-swagger2.md)
