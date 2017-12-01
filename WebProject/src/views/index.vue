@@ -41,7 +41,7 @@
 
           <template slot="title" collapse=false>
             <i class="el-icon-location"></i>
-            <span>导航一</span>
+            <span>基本组件</span>
           </template>
           <el-menu-item-group>
             <template slot="title">表格</template>
