@@ -62,13 +62,13 @@
           <span slot="title">导航二</span>
         </el-menu-item>
         <el-submenu index="3">
-        <el-menu-item>
-          <i class="el-icon-setting"></i>
-          <span slot="title">自定义组件</span>
-        </el-menu-item>
-        <el-menu-item-group>
-          <el-menu-item index="1-2" >分页组件</el-menu-item>
-        </el-menu-item-group>
+          <template slot="title" collapse=false>
+            <i class="el-icon-setting"></i>
+            <span>自定义组件</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="1-2" >分页组件</el-menu-item>
+          </el-menu-item-group>
         </el-submenu>
       </el-menu>
     </el-aside>
