@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cn.xiaowenjie.beans.User;
 import cn.xiaowenjie.common.beans.ResultBean;
+import cn.xiaowenjie.common.consts.Roles;
 import cn.xiaowenjie.common.utils.UserUtil;
 import cn.xiaowenjie.config.ServerCfg;
 
@@ -24,7 +25,7 @@ public class HomeController {
 		logger.info("login user:" + username);
 
 		// TODO 只是模拟登陆
-		User user = new User(100L, username, "晓风轻");
+		User user = new User(100L, username, "晓风轻", Roles.ADMIN);
 		session.setAttribute(UserUtil.KEY_USER, user);
 
 		return new ResultBean<User>(user);

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import cn.xiaowenjie.beans.Config;
 import cn.xiaowenjie.beans.User;
+import cn.xiaowenjie.common.consts.Roles;
 import cn.xiaowenjie.common.exceptions.CheckException;
 import cn.xiaowenjie.daos.ConfigDao;
 
@@ -29,7 +30,7 @@ public class UserService {
 	public User login(String username, String password) {
 		// 测试代码
 		if ("xwjie".equals(username) && "xwjie".equals(password)) {
-			return new User(1000L, username, "晓风轻");
+			return new User(1000L, username, "晓风轻", Roles.ADMIN);
 		}
 
 		throw new CheckException("请用户名和密码都输入xwjie");

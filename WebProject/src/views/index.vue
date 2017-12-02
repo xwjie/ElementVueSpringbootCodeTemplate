@@ -61,10 +61,15 @@
           <i class="el-icon-menu"></i>
           <span slot="title">导航二</span>
         </el-menu-item>
-        <el-menu-item index="3">
+        <el-submenu index="3">
+        <el-menu-item>
           <i class="el-icon-setting"></i>
-          <span slot="title">导航三</span>
+          <span slot="title">自定义组件</span>
         </el-menu-item>
+        <el-menu-item-group>
+          <el-menu-item index="1-2" >分页组件</el-menu-item>
+        </el-menu-item-group>
+        </el-submenu>
       </el-menu>
     </el-aside>
     <el-main>      
@@ -108,7 +113,7 @@ export default {
       selectTabName: "ConfigAdd",
       tabs: {
         ConfigAdd : {
-          title: "Tab 1",
+          title: "新建页面",
           name: "ConfigAdd",
           currentView: "ConfigAdd"
         }

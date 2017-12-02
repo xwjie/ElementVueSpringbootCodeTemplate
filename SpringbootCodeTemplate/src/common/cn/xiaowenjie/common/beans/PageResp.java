@@ -6,6 +6,11 @@ import org.springframework.data.domain.Page;
 
 import lombok.Data;
 
+/**
+ * 分页响应对象
+ * 
+ * @author 肖文杰 https://github.com/xwjie/
+ */
 @Data
 public class PageResp<T> {
 	private List<T> rows;

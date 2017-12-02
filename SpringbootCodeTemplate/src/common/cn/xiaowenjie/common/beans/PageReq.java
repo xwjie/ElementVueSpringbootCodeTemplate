@@ -7,6 +7,12 @@ import org.springframework.util.StringUtils;
 
 import lombok.Data;
 
+/**
+ * 分页请求参数
+ * 
+ * @author 肖文杰 https://github.com/xwjie/
+ *
+ */
 @Data
 public class PageReq {
 
