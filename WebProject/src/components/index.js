@@ -1,9 +1,11 @@
 import ConfigAdd from './ConfigAdd.vue';
-import ConfigTable from './ConfigTable';
+import ConfigTable from './table/ConfigTable';
 import LoginDialog from './LoginDialog';
-import ConfigTableSimple from './ConfigTableSimple';
-import ConfigTableSimpleFilter from './ConfigTableSimpleFilter';
+import ConfigTableSimple from './table/ConfigTableSimple';
+import ConfigTableSimpleFilter from './table/ConfigTableSimpleFilter';
 
+//tree
+import SimpleTree from './tree/SimpleTree';
 
 import Vue from 'vue';
 
@@ -15,6 +17,8 @@ function registerComponents(){
     Vue.component('ConfigTableSimple', ConfigTableSimple);
     Vue.component('ConfigTableSimpleFilter', ConfigTableSimpleFilter);
     
+    //tree
+    Vue.component('SimpleTree', SimpleTree);
 }
 
 export {

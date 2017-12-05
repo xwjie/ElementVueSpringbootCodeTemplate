@@ -42,9 +42,8 @@ function handlerData(response) {
 //添加一个返回拦截器
 axiosInstance.interceptors.response.use(function (response) {
     //对返回的数据进行一些处理
-
     // 全局的没有登录异常单独处理
-    if (response.data.code === -1) {
+    if (response.status == 401 || response.data.code === -1) {
         console.log('no login');
 
         // 通知打开登录窗口
@@ -56,6 +55,27 @@ axiosInstance.interceptors.response.use(function (response) {
 
     return response;
 }, function (error) {
+    let response = error.response;
+
+    console.log("response", error);
+
+    for(var i in error){
+        console.log(i, error[i]);
+    }
+    
+    if(response){
+        // 全局的没有登录异常单独处理
+        if (response.status == 401 || response.data.code === -1) {
+            console.log('no login');
+            
+            // 通知打开登录窗口
+            Vue.bus.emit('login-open');
+            
+            // 还没有找到中断promise好的办法
+            return Promise.reject('ERROR_NOLOGIN');
+        }
+    }
+
     //对返回的错误进行一些处理
     return Promise.reject(error);
 });
