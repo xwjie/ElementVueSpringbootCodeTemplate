@@ -19,6 +19,12 @@ public class TreeController {
 	@GetMapping("/simple")
 	public ResultBean<List<TreeNode>> simple() {
 
+		List<TreeNode> nodes = createSimpleNodes();
+
+		return new ResultBean<>(nodes);
+	}
+
+	private List<TreeNode> createSimpleNodes() {
 		List<TreeNode> nodes = createNodes("第1层节点");
 
 		for (int i = 0; i < nodes.size(); i++) {
@@ -28,8 +34,7 @@ public class TreeController {
 				n.setSubnodes(createNodes("第2层节点"));
 			}
 		}
-
-		return new ResultBean<>(nodes);
+		return nodes;
 	}
 
 	private List<TreeNode> createNodes(String name) {

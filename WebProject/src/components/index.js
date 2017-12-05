@@ -6,6 +6,7 @@ import ConfigTableSimpleFilter from './table/ConfigTableSimpleFilter';
 
 //tree
 import SimpleTree from './tree/SimpleTree';
+import SimpleTreeWithIcon from './tree/SimpleTreeWithIcon';
 
 import Vue from 'vue';
 
@@ -19,6 +20,7 @@ function registerComponents(){
     
     //tree
     Vue.component('SimpleTree', SimpleTree);
+    Vue.component('SimpleTreeWithIcon', SimpleTreeWithIcon);
 }
 
 export {
