@@ -36,8 +36,8 @@ Vue.prototype.error = function (msg) {
 Vue.prototype.ajax = Util.ajax;
 
 // commons 组件
-import Pagination from './commons/Pagination';
-Vue.component('Pagination', Pagination);
+import {registerCommonComponents} from './commons';
+registerCommonComponents();
 
 //
 import {registerComponents} from './components';

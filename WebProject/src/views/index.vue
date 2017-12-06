@@ -68,7 +68,8 @@
             <span>自定义组件</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="1-2" >分页组件</el-menu-item>
+            <el-menu-item index="3-1" >分页组件</el-menu-item>
+            <el-menu-item index="3-2" @click="addTab('选人组件', 'SelectUser')">选人组件</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>

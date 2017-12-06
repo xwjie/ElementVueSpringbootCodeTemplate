@@ -32,7 +32,7 @@ public class UserUtil {
 		tlUser.set(user);
 
 		// 把用户信息放到log4j
-		MDC.put(KEY_USER, user.getUsername());
+		MDC.put(KEY_USER, user.getName());
 	}
 
 	/**

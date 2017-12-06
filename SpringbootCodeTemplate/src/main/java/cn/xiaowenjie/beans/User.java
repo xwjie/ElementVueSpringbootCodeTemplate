@@ -29,7 +29,7 @@ public class User implements Serializable {
 	@GeneratedValue
 	private long id;
 
-	private String username;
+	private String name;
 
 	private String nick;
 
