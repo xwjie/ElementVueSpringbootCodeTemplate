@@ -9,31 +9,18 @@
     {{tag.nick}}
     </el-tag>
     <el-autocomplete
-<<<<<<< HEAD
         popper-class="my-autocomplete"
-=======
-        class="input-new-tag"
->>>>>>> f8101f8a992fe9b78076c752080bb1a01ba987f2
         v-if="inputVisible"
         v-model="inputValue"
         ref="saveTagInput"
         size="small"
         :fetch-suggestions="querySearchAsync"
         placeholder="请输入内容"
-<<<<<<< HEAD
         @select="handleSelect">
     <!--
         @keyup.enter.native="handleInputConfirm"
         @blur="handleInputConfirm"
         @blur="handleBlur"
-=======
-        @select="handleSelect"
-        style="width:200px"
-    >
-    <!--
-        @keyup.enter.native="handleInputConfirm"
-        @blur="handleInputConfirm"
->>>>>>> f8101f8a992fe9b78076c752080bb1a01ba987f2
         -->
     <!--
         <i
@@ -42,13 +29,8 @@
             @click="handleIconClick">
         </i>
         -->
-<<<<<<< HEAD
         <template slot-scope="props">
             <span class="name">{{ props.item.name }}</span>
-=======
-        <template slot-scope="props" style="width:200px;">
-            <div class="name">{{ props.item.name }}</div>
->>>>>>> f8101f8a992fe9b78076c752080bb1a01ba987f2
             <span class="addr">{{ props.item.nick }}</span>
         </template>
     </el-autocomplete>
@@ -73,7 +55,6 @@
   margin-left: 10px;
   vertical-align: bottom;
 }
-<<<<<<< HEAD
 
 .my-autocomplete {
   width: 400px;
@@ -96,8 +77,6 @@
     }
   }
 }
-=======
->>>>>>> f8101f8a992fe9b78076c752080bb1a01ba987f2
 </style>
 
 <script>
@@ -129,13 +108,10 @@ export default {
       this.inputVisible = false;
       this.inputValue = "";
     },
-<<<<<<< HEAD
     handleBlur() {
       this.inputVisible = false;
       this.inputValue = "";
     },
-=======
->>>>>>> f8101f8a992fe9b78076c752080bb1a01ba987f2
     handleInputConfirm() {
       this.add(this.inputValue);
     },
