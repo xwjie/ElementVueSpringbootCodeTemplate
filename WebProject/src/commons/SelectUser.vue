@@ -65,7 +65,6 @@
     .name {
       text-overflow: ellipsis;
       overflow: hidden;
-      width: 200px;
     }
 
     .addr {

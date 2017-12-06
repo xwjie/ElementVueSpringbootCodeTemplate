@@ -18,7 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// 先放开
 		// http.authorizeRequests().anyRequest().permitAll();
 
-		http.cors().disable().authorizeRequests()
+		http.authorizeRequests()
 				.antMatchers("/", "/home", "/resources/**", "/favicon.ico").permitAll()
 				.anyRequest().authenticated().and()
 				// basic返回401 ，【不能】配置loginpage
@@ -30,7 +30,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				// .and()
 				.logout().permitAll();
 
-		// http.csrf().disable();
+		//这句话要放后面，否则被冲掉了无效
+		http.csrf().disable();
 	}
 
 	@Override
