@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.List;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -22,7 +21,6 @@ import org.apache.catalina.core.ApplicationFilterChain;
 import org.apache.catalina.core.ApplicationFilterConfig;
 import org.springframework.security.web.FilterChainProxy;
 import org.springframework.web.filter.DelegatingFilterProxy;
-import org.springframework.web.filter.GenericFilterBean;
 
 import cn.xiaowenjie.beans.User;
 import cn.xiaowenjie.common.utils.UserUtil;
@@ -48,12 +46,15 @@ public class UserFilter implements Filter {
 
 		fillUserInfo((HttpServletRequest) request);
 
-		chain.doFilter(request, response);
-
-		printAllFilters(chain);
-		printResponseInfo((HttpServletResponse) response);
-
-		clearAllUserInfo();
+		try {
+			chain.doFilter(request, response);
+			
+			//TODO : delete 测试代码
+			printAllFilters(chain);
+			printResponseInfo((HttpServletResponse) response);
+		} finally {
+			clearAllUserInfo();
+		}
 	}
 
 	private void printResponseInfo(HttpServletResponse response) {
