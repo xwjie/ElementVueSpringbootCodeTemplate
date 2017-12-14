@@ -2,7 +2,9 @@
 
 # 增加基类
 
-把id和创建修改时间放到基类里面。需要使用 `@MappedSuperclass` 注解。
+把id和创建修改时间放到基类里面，并把类修改为 `abstract` 。
+
+需要使用 `@MappedSuperclass` 注解。
 
 使用 `@CreationTimestamp`  和 `@UpdateTimestamp` 自动生成对应的时间。
 
