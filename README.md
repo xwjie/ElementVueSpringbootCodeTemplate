@@ -18,7 +18,7 @@
 
 # 2017.12.14 增加基类，实现了自动生成 createTime和updateTime
 
-[Hibernate-增加基类，实现了自动生成 createTime和updateTime](note/增加基类，实现了自动生成 createTime和updateTime.md)
+[Hibernate-增加基类，实现了自动生成 createTime和updateTime](note/Hibernate-auto-add-createTime-updateTime.md)
 
 `spring security` 默认的 `X-Frame-Options` 是 `deny` ，修改为 `SAMEORIGIN` ，否则连h2都无法嵌入显示了。如下：
 
