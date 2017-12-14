@@ -46,7 +46,7 @@
           <el-menu-item-group>
             <template slot="title">表格</template>
             <el-menu-item index="1-1" @click="addTab('最基本表格', 'ConfigTableSimple')">最基本表格</el-menu-item>
-            <el-menu-item index="1-2" @click="addTab('浏览器数据过滤', 'ConfigTableSimpleFilter')">浏览器数据过滤</el-menu-item>
+            <el-menu-item index="1-2" @click="addTab('前台数据过滤', 'ConfigTableSimpleFilter')">前台数据过滤</el-menu-item>
             <el-menu-item index="1-2" @click="addTab('后台数据过滤', 'ConfigTable')">后台数据过滤</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group title="树">

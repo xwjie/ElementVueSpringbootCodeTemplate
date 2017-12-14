@@ -32,6 +32,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		//这句话要放后面，否则被冲掉了无效
 		http.csrf().disable();
+		
+		// 否则连h2都无法嵌入显示了
+		http.headers().frameOptions().sameOrigin();
 	}
 
 	@Override

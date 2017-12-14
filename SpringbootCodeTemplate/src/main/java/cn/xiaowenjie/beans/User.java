@@ -1,11 +1,8 @@
 package cn.xiaowenjie.beans;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.UniqueConstraint;
 
 import cn.xiaowenjie.common.consts.Roles;
 import lombok.AllArgsConstructor;
@@ -21,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
+public class User extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
