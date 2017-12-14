@@ -16,6 +16,16 @@
 ## 前台
 * VUE + VUEX + ElementUI
 
+# 2017.12.14 增加基类，实现了自动生成 createTime和updateTime
+
+[Hibernate-增加基类，实现了自动生成 createTime和updateTime](note/增加基类，实现了自动生成 createTime和updateTime.md)
+
+`spring security` 默认的 `X-Frame-Options` 是 `deny` ，修改为 `SAMEORIGIN` ，否则连h2都无法嵌入显示了。如下：
+
+```Java
+http.headers().frameOptions().sameOrigin();
+```
+
 # 2017.12.02 封装VUE组件，增加spring security
 
 [VUE分页组件封装](https://zhuanlan.zhihu.com/p/31638307) , 使用简单，前后台代码都封装好了，相当不错。
