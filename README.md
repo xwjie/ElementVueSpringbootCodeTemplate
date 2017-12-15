@@ -16,6 +16,16 @@
 ## 前台
 * VUE + VUEX + ElementUI
 
+# 使用方法
+
+使用h2内置数据库演示spring data jpa功能。无需任何配置。
+
+使用了redis做cache，可以启动redis，不启动也暂时没有影响。
+
+先执行junit 方法 SpringbootCodeTemplateApplicationTests.addTestData 增加测试数据。然后 启动后台springboot工程，在启动前台web工程即可。
+
+如需要登陆，默认的内置账号密码为xwjie/xwjie。
+
 # 2017.12.14 增加基类，实现了自动生成 createTime和updateTime
 
 [Hibernate-增加基类，实现了自动生成 createTime和updateTime](note/Hibernate-auto-add-createTime-updateTime.md)
