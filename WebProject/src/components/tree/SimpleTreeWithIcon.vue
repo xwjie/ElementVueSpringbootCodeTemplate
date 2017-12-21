@@ -52,9 +52,10 @@ export default {
       });
     },
     renderContent(h, { node, data, store }) {
+      let icon="el-icon-"+node.icon;
       return (
         <span>
-          <i class='"el-icon-"+{node.icon}' />
+          <i class={icon} />
           {node.label}
         </span>
       );

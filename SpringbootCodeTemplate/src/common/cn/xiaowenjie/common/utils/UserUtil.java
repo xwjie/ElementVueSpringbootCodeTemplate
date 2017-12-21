@@ -58,8 +58,8 @@ public class UserUtil {
 
 		return user;
 	}
-	
-	public static long getUserId(){
+
+	public static long getUserId() {
 		return getUser().getId();
 	}
 
@@ -81,4 +81,5 @@ public class UserUtil {
 
 		MDC.remove(KEY_USER);
 	}
+
 }

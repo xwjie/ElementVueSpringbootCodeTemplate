@@ -30,15 +30,16 @@ public class AppController {
 	@Autowired
 	UserService userService;
 
-	@PostMapping(value = "/login")
-	public ResultBean<User> login(HttpSession session, String username, String password) {
-		logger.info("login user:" + username);
-
-		User user = userService.login(username, password);
-		session.setAttribute(UserUtil.KEY_USER, user);
-
-		return new ResultBean<User>(user);
-	}
+	// @PostMapping(value = "/login")
+	// public ResultBean<User> login(HttpSession session, String username, String
+	// password) {
+	// logger.info("login user:" + username);
+	//
+	// User user = userService.login(username, password);
+	// session.setAttribute(UserUtil.KEY_USER, user);
+	//
+	// return new ResultBean<User>(user);
+	// }
 
 	@PostMapping(value = "/logout")
 	public ResultBean<Boolean> logout(HttpSession session) {
