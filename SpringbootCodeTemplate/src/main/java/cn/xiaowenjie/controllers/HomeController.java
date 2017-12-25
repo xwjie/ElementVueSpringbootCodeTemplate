@@ -25,7 +25,13 @@ public class HomeController {
 		logger.info("login user:" + username);
 
 		// TODO 只是模拟登陆
-		User user = new User(100L, username, "晓风轻", Roles.ADMIN);
+		User user = new User();
+
+		user.setId(1000L);
+		user.setName("xwjie");
+		user.setNick("晓风轻");
+		user.setRole(Roles.ADMIN);
+
 		session.setAttribute(UserUtil.KEY_USER, user);
 
 		return new ResultBean<User>(user);

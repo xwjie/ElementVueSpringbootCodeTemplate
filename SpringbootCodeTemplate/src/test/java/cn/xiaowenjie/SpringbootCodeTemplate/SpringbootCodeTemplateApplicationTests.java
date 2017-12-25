@@ -8,7 +8,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.annotation.Order;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import cn.xiaowenjie.SpringbootCodeTemplateApplication;
@@ -30,15 +29,27 @@ public class SpringbootCodeTemplateApplicationTests {
 	@Autowired
 	UserDao userDao;
 
-
 	@Test
 	public void test1_addUser() {
 		System.out.println("\n\n---addUser---\n\n");
-		User user = new User(999, "xwjie", "晓风轻", Roles.ADMIN);
+
+		User user = new User();
+
+		user.setId(1000L);
+		user.setName("xwjie");
+		user.setNick("晓风轻");
+		user.setRole(Roles.ADMIN);
+
 		userDao.save(user);
 
 		for (int i = 1; i <= 10; i++) {
-			User u = new User(i, "user" + i, "测试用户" + i, Roles.USER);
+			User u = new User();
+
+			user.setId(i);
+			user.setName("user" + i);
+			user.setNick("测试用户" + i);
+			user.setRole(Roles.USER);
+
 			userDao.save(u);
 		}
 	}

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.xiaowenjie.beans.TreeNode;
 import cn.xiaowenjie.beans.User;
 import cn.xiaowenjie.common.beans.ResultBean;
 import cn.xiaowenjie.common.consts.Roles;
@@ -22,8 +21,14 @@ public class UserController {
 	public ResultBean<List<User>> search(String keyword) {
 		System.out.println("UserController.search()" + keyword);
 
-		List<User> nodes = Arrays.asList(new User(999L, "dddddddd", "大大大", Roles.ADMIN),
-				new User(999L, "dddddd2", "大大大4", Roles.ADMIN), new User(999L, "ddddd4d", "大大33", Roles.ADMIN));
+		User user = new User();
+
+		user.setId(1000L);
+		user.setName("xwjie");
+		user.setNick("晓风轻");
+		user.setRole(Roles.ADMIN);
+
+		List<User> nodes = Arrays.asList(user);
 
 		return new ResultBean<>(nodes);
 	}
