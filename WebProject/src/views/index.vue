@@ -165,6 +165,12 @@ export default {
     },
     removeTab(targetName) {
       this.$delete(this.tabs, targetName);
+
+      // 选中第一个tab
+      for ( let key in this.tabs ) {
+        this.selectTabName = key;
+        break;
+      };
     }
   }
 };
