@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import cn.xiaowenjie.beans.User;
@@ -17,8 +18,14 @@ import cn.xiaowenjie.common.consts.Roles;
 @RequestMapping("/user")
 public class UserController {
 
+	/**
+	 * 测试数据
+	 * 
+	 * @param keyword
+	 * @return
+	 */
 	@GetMapping("/search")
-	public ResultBean<List<User>> search(String keyword) {
+	public ResultBean<List<User>> search(@RequestParam String keyword) {
 		System.out.println("UserController.search()" + keyword);
 
 		User user = new User();

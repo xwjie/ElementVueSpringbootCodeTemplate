@@ -6,7 +6,6 @@ spring:
     port: 6379
   datasource:
     url: jdbc:h2:file:~/mydb.h2
-    #url: jdbc:h2:mem:mydb
     username: sa
     password: sa
     driverClassName: org.h2.Driver
@@ -22,5 +21,17 @@ spring:
       settings:
         web-allow-others: true
         trace: true
+  mail:
+    password: xxx123456
+    host: smtp.163.com
+    username: zsjsoe
+    from: zsjsoe@163.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 server:
   port: 8080

@@ -16,6 +16,7 @@ import cn.xiaowenjie.beans.User;
 import cn.xiaowenjie.common.consts.Roles;
 import cn.xiaowenjie.daos.UserDao;
 import cn.xiaowenjie.services.ConfigService;
+import cn.xiaowenjie.tool.MailTool;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringbootCodeTemplateApplication.class)
@@ -83,5 +84,18 @@ public class SpringbootCodeTemplateApplicationTests {
 		for (Config config : all) {
 			System.out.println(config.getCreator());
 		}
+	}
+
+	@Autowired
+	MailTool mailTool;
+
+	@Test
+	public void test4_sendmai() {
+		mailTool.send("测试发送标题", "这是正文\n没有html", "1304471323@qq.com");
+	}
+	
+	@Test
+	public void test5_sendhtmlmai() {
+		mailTool.sendHtml("测试发送标题html", "<html><body><h1>这是正文</h1><br/><b>html</b></body></html>", "1304471323@qq.com");
 	}
 }

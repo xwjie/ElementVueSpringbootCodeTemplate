@@ -162,8 +162,7 @@ public class UserFilter implements Filter {
 	}
 
 	private User getUserFromSession(HttpServletRequest request) {
-		// TODO 如果不参加session，model.addAttribute(UserUtil.KEY_USER, username);报错
-		HttpSession session = request.getSession(true);
+		HttpSession session = request.getSession(false);
 
 		if (session == null) {
 			return null;
@@ -186,14 +185,21 @@ public class UserFilter implements Filter {
 		// 从spring security里面得到用户名
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-		if (authentication == null) {
+		if (authentication == null || !authentication.isAuthenticated()) {
 			return null;
 		}
 
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+		System.out.println("UserFilter.getUserFromSpringSecurity(): " + authentication.getPrincipal());
 
-		// 根据用户名得到数据库用户
-		return userService.findUser(userDetails.getUsername());
+		// 没有登陆的时候，返回的是 anonymousUser 字符串
+		if (authentication.getPrincipal() instanceof UserDetails) {
+			UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+
+			// 根据用户名得到数据库用户
+			return userService.findUser(userDetails.getUsername());
+		} else {
+			return null;
+		}
 	}
 
 }

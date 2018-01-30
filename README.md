@@ -26,6 +26,15 @@
 
 如需要登陆，默认的内置账号密码为 `xwjie/xwjie` 。
 
+# 2018.1.30 集成JMS，发送MAIL组件
+
+- 使用 `jms` 执行 `异步任务` ，当然你也可以用 `线程池` 来做异步操作，使用 `jms` 的好处是将来好扩展
+- 集成发送mail功能
+- User表增加唯一主键
+```
+@Table(indexes = { @Index(name = "user_name_unique", columnList = "name", unique = true) })
+```
+
 # 2017.12.14 增加基类，实现了自动生成 createTime和updateTime
 
 [Hibernate-增加基类，实现了自动生成 createTime和updateTime](note/Hibernate-auto-add-createTime-updateTime.md)
