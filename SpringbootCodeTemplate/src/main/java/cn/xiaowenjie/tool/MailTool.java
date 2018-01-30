@@ -35,7 +35,7 @@ public class MailTool {
 		message.setSubject(subjct);
 		message.setText(text);
 
-		jmsTool.send(JMSType.SEND_MAIL, message);
+		jmsTool.sendMessage(JMSType.SEND_MAIL, message);
 	}
 
 	@SneakyThrows
@@ -54,6 +54,6 @@ public class MailTool {
 		// 附件
 		// messageHelper.addAttachment
 
-		jmsTool.send(JMSType.SEND_MAIL, mimeMessage);
+		jmsTool.sendMessage(JMSType.SEND_MAIL, mimeMessage);
 	}
 }

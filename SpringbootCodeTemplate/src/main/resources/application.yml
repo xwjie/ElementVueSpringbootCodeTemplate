@@ -22,7 +22,7 @@ spring:
         web-allow-others: true
         trace: true
   mail:
-    password: xxx123456
+    password: 123456
     host: smtp.163.com
     username: zsjsoe
     from: zsjsoe@163.com
