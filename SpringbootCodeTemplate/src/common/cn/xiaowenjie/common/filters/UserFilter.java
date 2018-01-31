@@ -57,8 +57,8 @@ public class UserFilter implements Filter {
 			chain.doFilter(request, response);
 
 			// TODO : delete 测试代码
-			printAllFilters(chain);
-			printResponseInfo((HttpServletResponse) response);
+			// printAllFilters(chain);
+			// printResponseInfo((HttpServletResponse) response);
 		} finally {
 			clearAllUserInfo();
 		}
