@@ -1,14 +1,14 @@
-# Ôö¼Ó»ùÀà£¬ÊµÏÖÁË×Ô¶¯Éú³É createTimeºÍupdateTime
+# hibernate ç¬”è®°
 
-# Ôö¼Ó»ùÀà
+## è‡ªåŠ¨ç”Ÿæˆæ—¶é—´
 
-°ÑidºÍ´´½¨ĞŞ¸ÄÊ±¼ä·Åµ½»ùÀàÀïÃæ£¬²¢°ÑÀàĞŞ¸ÄÎª `abstract` ¡£
+å¢åŠ åŸºç±»ï¼ŒæŠŠidå’Œåˆ›å»ºä¿®æ”¹æ—¶é—´æ”¾åˆ°åŸºç±»é‡Œé¢ï¼Œå¹¶æŠŠç±»ä¿®æ”¹ä¸º `abstract` ã€‚
 
-ĞèÒªÊ¹ÓÃ `@MappedSuperclass` ×¢½â¡£
+éœ€è¦ä½¿ç”¨ `@MappedSuperclass` æ³¨è§£ã€‚
 
-Ê¹ÓÃ `@CreationTimestamp`  ºÍ `@UpdateTimestamp` ×Ô¶¯Éú³É¶ÔÓ¦µÄÊ±¼ä¡£
+ä½¿ç”¨ `@CreationTimestamp`  å’Œ `@UpdateTimestamp` è‡ªåŠ¨ç”Ÿæˆå¯¹åº”çš„æ—¶é—´ã€‚
 
-```Java
+```java
 package cn.xiaowenjie.beans;
 
 import java.io.Serializable;
@@ -24,9 +24,9 @@ import org.hibernate.annotations.UpdateTimestamp;
 import lombok.Data;
 
 /**
- * »ùÀà
+ * åŸºç±»
  * 
- * @author Ğ¤ÎÄ½Ü https://github.com/xwjie/
+ * @author æ™“é£è½» https://github.com/xwjie/
  */
 @Data
 @MappedSuperclass
@@ -44,4 +44,12 @@ public abstract class BaseEntity implements Serializable {
 
 }
 
+```
+
+## å¢åŠ å”¯ä¸€ä¸»é”®
+
+Userè¡¨ï¼š
+
+```java
+@Table(indexes = { @Index(name = "user_name_unique", columnList = "name", unique = true) })
 ```

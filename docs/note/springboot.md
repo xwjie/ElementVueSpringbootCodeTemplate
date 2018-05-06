@@ -1,5 +1,7 @@
-# 更新代码自动重启
-增加依赖
+# springboot绗旇
+
+## 鏇存柊浠ｇ爜鑷姩閲嶅惎
+澧炲姞渚濊禆
 ```
 <dependency>
   <groupId>org.springframework.boot</groupId>
@@ -7,9 +9,4 @@
 </dependency>
 ```
 
-# 踩坑记1 logback的 property不能设置为空
-
-<property name="password" value="" />
-
-为空无法启动
 

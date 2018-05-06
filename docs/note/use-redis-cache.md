@@ -1,9 +1,10 @@
-# 为什么使用redis
+# 使用redis
 
+## 为什么使用redis
 性能有保证，redis支持集群等，数据也有保证。而且后面使用 `spring-session` 做分布式Session的时候，也是使用redis做持久化。所以一次到位直接使用redis。
 
 
-# 增加redis依赖
+## 增加redis依赖
 
 ```
 <dependency>
@@ -12,7 +13,7 @@
 </dependency>
 ```
 
-# 增加redis配置
+## 增加redis配置
 
 `application.yml` 上增加：
 
@@ -23,7 +24,7 @@ spring:
     port: 6379
 ```
 
-# 配置redis
+## 配置redis
 
 继承CachingConfigurerSupport，增加 `@EnableCaching` 注解，需要重写 `keyGenerator` 方法。
 
@@ -114,7 +115,7 @@ public KeyGenerator keyGenerator() {
 }
 ```
 
-# 使用缓存
+## 使用缓存
 
 保存的时候使用 `@Cacheable`，清空使用 `@CacheEvict` ，更新的时候使用 `@CachePut` 。
 
@@ -146,7 +147,7 @@ public boolean delete(long id) {
 }
 ```
 
-# 定时清空缓存
+## 定时清空缓存
 
 也可以定时清空cache，使用 `@EnableScheduling` 和 `@Scheduled` 注解。
 
@@ -166,7 +167,7 @@ public class ClearCacheTask {
 }
 ```
 
-# redis 怎么样保存cache
+## redis 怎么样保存cache
 
 增加2条数据，一个是类型为 `zset` 的 `缓存名~keys` , 里面存放了该缓存所有的key， 一个是对应的key，值为序列化后的json。
 
@@ -177,7 +178,7 @@ public class ClearCacheTask {
 ![redis console](/pictures/redisconsole.png) 
 
 
-# 安装redis
+## 安装redis
 
 https://github.com/MicrosoftArchive/redis/releases 下载最新版本，3.2
 
@@ -190,7 +191,7 @@ redis-server.exe redis.windows.conf
 
 ![redis client](/pictures/redisclient.png) 
 
-# redis 比较重要命令
+## redis 比较重要命令
 * keys * / keys cn* 查看数据
 * type keyname 查看数据类型
 * dbsize 查看记录数
