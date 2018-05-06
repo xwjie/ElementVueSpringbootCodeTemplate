@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>晓风轻Vue+SpringBoot代码模板 | 使用H2数据库</title>
+    <meta name="description" content="晓风轻Vue+SpringBoot代码模板">
+    
+    
+    <link rel="preload" href="/ElementVueSpringbootCodeTemplate/assets/css/14.styles.e491d3bf.css" as="style"><link rel="preload" href="/ElementVueSpringbootCodeTemplate/assets/js/app.63780be1.js" as="script"><link rel="preload" href="/ElementVueSpringbootCodeTemplate/assets/js/6.6ea7ec8b.js" as="script"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/4.0826e6e3.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/0.0469b2e3.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/1.b24e82eb.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/2.29db06ad.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/3.47a72772.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/5.b0259ce2.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/7.fbff5130.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/8.5c948da2.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/9.18ddf435.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/10.feb7dd37.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/11.50f114eb.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/12.f165da3b.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/13.0b419ce3.js">
+    <link rel="stylesheet" href="/ElementVueSpringbootCodeTemplate/assets/css/14.styles.e491d3bf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/ElementVueSpringbootCodeTemplate/" class="home-link router-link-active"><!----><span class="site-name">
+      晓风轻Vue+SpringBoot代码模板
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/" class="nav-link">首页</a></div><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/note/" class="nav-link router-link-active">开发笔记</a></div><a href="https://github.com/xwjie/ElementVueSpringbootCodeTemplate" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/" class="nav-link">首页</a></div><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/note/" class="nav-link router-link-active">开发笔记</a></div><a href="https://github.com/xwjie/ElementVueSpringbootCodeTemplate" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>开发笔记</span><!----></p><ul class="sidebar-group-items"><li><a href="/ElementVueSpringbootCodeTemplate/note/" class="sidebar-link">开发笔记说明</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/use-redis-cache.html" class="sidebar-link">使用redis</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/update-elementui.html" class="sidebar-link">ElementUI升级2.0.2</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html" class="active sidebar-link">使用H2数据库</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html#加入依赖" class="sidebar-link">加入依赖</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html#定义实体类" class="sidebar-link">定义实体类</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html#定义dao（-repository-）" class="sidebar-link">定义Dao（ Repository ）</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html#配置数据库" class="sidebar-link">配置数据库</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html#引入guava，-把查询结果转为list" class="sidebar-link">引入guava， 把查询结果转为list</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html#使用h2的web-console" class="sidebar-link">使用h2的web console</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html#使用jpa" class="sidebar-link">使用jpa</a></li></ul></li><li><a href="/ElementVueSpringbootCodeTemplate/note/vue-filter.html" class="sidebar-link">增加vue过滤器</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/enable-swagger2.html" class="sidebar-link">增加swagger2</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/vue-comps.html" class="sidebar-link">Vue组件</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/spring-security.html" class="sidebar-link">Spring Security 使用</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/hibernate.html" class="sidebar-link">hibernate 笔记</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/jms.html" class="sidebar-link">JMS使用</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/springboot.html" class="sidebar-link">springboot笔记</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/keng.html" class="sidebar-link">踩坑记</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="使用h2数据库"><a href="#使用h2数据库" aria-hidden="true" class="header-anchor">#</a> 使用H2数据库</h1><h2 id="加入依赖"><a href="#加入依赖" aria-hidden="true" class="header-anchor">#</a> 加入依赖</h2><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.h2database<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>h2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-data-jpa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre><h2 id="定义实体类"><a href="#定义实体类" aria-hidden="true" class="header-anchor">#</a> 定义实体类</h2><pre class="language-java"><code><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>Entity<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>GeneratedValue<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>Id<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> lombok<span class="token punctuation">.</span>Data<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Entity</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Config</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> <span class="token number">1</span>L<span class="token punctuation">;</span>
+
+  <span class="token keyword">private</span> String name<span class="token punctuation">,</span> description<span class="token punctuation">,</span> value<span class="token punctuation">;</span>
+
+  <span class="token annotation punctuation">@Id</span>
+  <span class="token annotation punctuation">@GeneratedValue</span>
+  <span class="token keyword">private</span> <span class="token keyword">long</span> id<span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+   * 创建者
+   */</span>
+  <span class="token keyword">private</span> <span class="token keyword">long</span> creator<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="定义dao（-repository-）"><a href="#定义dao（-repository-）" aria-hidden="true" class="header-anchor">#</a> 定义Dao（ Repository ）</h2><p>可以使用 <code>PagingAndSortingRepository</code> 或者 <code>CrudRepository</code>。</p><p>增加了一个根据名称查找的方法。</p><pre class="language-java"><code><span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>repository<span class="token punctuation">.</span>PagingAndSortingRepository<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>xiaowenjie<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>Config<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ConfigDao</span> <span class="token keyword">extends</span> <span class="token class-name">PagingAndSortingRepository</span><span class="token generics function"><span class="token punctuation">&lt;</span>Config<span class="token punctuation">,</span> Long<span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+  Config <span class="token function">findByName</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="配置数据库"><a href="#配置数据库" aria-hidden="true" class="header-anchor">#</a> 配置数据库</h2><p>配置使用h2数据库，内存型的时候url为 <code>jdbc:h2:mem:mydb</code> 。 文件类型为：<code>jdbc:h2:file:~/mydb.h2</code></p><pre class="language-text"><code>spring:
+  profiles:
+    active: dev
+  redis:
+    host: localhost
+    port: 6379
+  datasource:
+    url: jdbc:h2:file:~/mydb.h2
+    #url: jdbc:h2:mem:mydb
+    username: sa
+    password: sa
+    driverClassName: org.h2.Driver
+  jpa:
+    database: h2
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+        trace: true
+</code></pre><h2 id="引入guava，-把查询结果转为list"><a href="#引入guava，-把查询结果转为list" aria-hidden="true" class="header-anchor">#</a> 引入guava， 把查询结果转为list</h2><p>使用jpa查询结果中，返回的为 iterable，需要转换为list返回给前台。</p><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.google.guava<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>guava<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>16.0.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre><pre class="language-java"><code><span class="token keyword">import</span> com<span class="token punctuation">.</span>google<span class="token punctuation">.</span>common<span class="token punctuation">.</span>collect<span class="token punctuation">.</span>Lists<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> Collection<span class="token generics function"><span class="token punctuation">&lt;</span>Config<span class="token punctuation">&gt;</span></span> <span class="token function">getAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 校验通过后打印重要的日志</span>
+  logger<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;getAll start ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  List<span class="token generics function"><span class="token punctuation">&lt;</span>Config<span class="token punctuation">&gt;</span></span> data <span class="token operator">=</span> Lists<span class="token punctuation">.</span><span class="token function">newArrayList</span><span class="token punctuation">(</span>dao<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  logger<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;getAll end, data size:&quot;</span> <span class="token operator">+</span> data<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> data<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="使用h2的web-console"><a href="#使用h2的web-console" aria-hidden="true" class="header-anchor">#</a> 使用h2的web console</h2><p>访问 http://127.0.0.1:8080/h2-console/</p><p><img src="/ElementVueSpringbootCodeTemplate/assets/img/h2-1.2c844489.png" alt></p><p>可以选择中文界面，赞，填写好url，链接进去：</p><p><img src="/ElementVueSpringbootCodeTemplate/assets/img/h2-2.ed779ec3.png" alt></p><p>使用文件类型后，会在用户的目录下创建数据库文件，trace文件里面是文本，为数据库错误的一些日志堆栈。</p><p><img src="/ElementVueSpringbootCodeTemplate/assets/img/h2-3.81d8e91e.png" alt></p><blockquote><p>注意：上线稳定的时候注意把控制台关掉。</p></blockquote><h2 id="使用jpa"><a href="#使用jpa" aria-hidden="true" class="header-anchor">#</a> 使用jpa</h2><p>直接注入 Repository <code>ConfigDao</code> ，具体参考工程代码 <code>ConfigService</code>。</p><pre class="language-java"><code><span class="token keyword">package</span> cn<span class="token punctuation">.</span>xiaowenjie<span class="token punctuation">.</span>services<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token keyword">static</span> cn<span class="token punctuation">.</span>xiaowenjie<span class="token punctuation">.</span>common<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>CheckUtil<span class="token punctuation">.</span>check<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token keyword">static</span> cn<span class="token punctuation">.</span>xiaowenjie<span class="token punctuation">.</span>common<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>CheckUtil<span class="token punctuation">.</span>notEmpty<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token keyword">static</span> cn<span class="token punctuation">.</span>xiaowenjie<span class="token punctuation">.</span>common<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>CheckUtil<span class="token punctuation">.</span>notNull<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Collection<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>Logger<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span>LoggerFactory<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span>Service<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>google<span class="token punctuation">.</span>common<span class="token punctuation">.</span>collect<span class="token punctuation">.</span>Lists<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>xiaowenjie<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>Config<span class="token punctuation">;</span>
+<span class="token keyword">import</span> cn<span class="token punctuation">.</span>xiaowenjie<span class="token punctuation">.</span>daos<span class="token punctuation">.</span>ConfigDao<span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 配置业务处理类
+ * 
+ * @author 晓风轻 https://github.com/xwjie/
+ *
+ */</span>
+<span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ConfigService</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Logger logger <span class="token operator">=</span> LoggerFactory<span class="token punctuation">.</span><span class="token function">getLogger</span><span class="token punctuation">(</span>ConfigService<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token annotation punctuation">@Autowired</span>
+  ConfigDao dao<span class="token punctuation">;</span>
+
+  <span class="token keyword">public</span> Collection<span class="token generics function"><span class="token punctuation">&lt;</span>Config<span class="token punctuation">&gt;</span></span> <span class="token function">getAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 校验通过后打印重要的日志</span>
+    logger<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;getAll start ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    List<span class="token generics function"><span class="token punctuation">&lt;</span>Config<span class="token punctuation">&gt;</span></span> data <span class="token operator">=</span> Lists<span class="token punctuation">.</span><span class="token function">newArrayList</span><span class="token punctuation">(</span>dao<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    logger<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;getAll end, data size:&quot;</span> <span class="token operator">+</span> data<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> data<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">add</span><span class="token punctuation">(</span>Config config<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 参数校验</span>
+    <span class="token function">notNull</span><span class="token punctuation">(</span>config<span class="token punctuation">,</span> <span class="token string">&quot;param.is.null&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">notEmpty</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;name.is.null&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">notEmpty</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;value.is.null&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 校验通过后打印重要的日志</span>
+    logger<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;add config:&quot;</span> <span class="token operator">+</span> config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 校验重复</span>
+    <span class="token function">check</span><span class="token punctuation">(</span>null <span class="token operator">==</span> dao<span class="token punctuation">.</span><span class="token function">findByName</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">&quot;name.repeat&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    config <span class="token operator">=</span> dao<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 修改操作需要打印操作结果</span>
+    logger<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;add config success, id:&quot;</span> <span class="token operator">+</span> config<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> config<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">delete</span><span class="token punctuation">(</span><span class="token keyword">long</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 参数校验</span>
+    <span class="token function">check</span><span class="token punctuation">(</span>id <span class="token operator">&gt;</span> <span class="token number">0</span>L<span class="token punctuation">,</span> <span class="token string">&quot;id.error&quot;</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    dao<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 修改操作需要打印操作结果</span>
+    logger<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">&quot;delete config success, id:&quot;</span> <span class="token operator">+</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/ElementVueSpringbootCodeTemplate/note/update-elementui.html" class="prev">
+          ElementUI升级2.0.2
+        </a></span><span class="next"><a href="/ElementVueSpringbootCodeTemplate/note/vue-filter.html">
+          增加vue过滤器
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/ElementVueSpringbootCodeTemplate/assets/js/6.6ea7ec8b.js" defer></script><script src="/ElementVueSpringbootCodeTemplate/assets/js/app.63780be1.js" defer></script>
+  </body>
+</html>

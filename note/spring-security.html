@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>晓风轻Vue+SpringBoot代码模板 | Spring Security 使用</title>
+    <meta name="description" content="晓风轻Vue+SpringBoot代码模板">
+    
+    
+    <link rel="preload" href="/ElementVueSpringbootCodeTemplate/assets/css/14.styles.e491d3bf.css" as="style"><link rel="preload" href="/ElementVueSpringbootCodeTemplate/assets/js/app.63780be1.js" as="script"><link rel="preload" href="/ElementVueSpringbootCodeTemplate/assets/js/5.b0259ce2.js" as="script"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/4.0826e6e3.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/0.0469b2e3.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/1.b24e82eb.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/2.29db06ad.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/3.47a72772.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/6.6ea7ec8b.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/7.fbff5130.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/8.5c948da2.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/9.18ddf435.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/10.feb7dd37.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/11.50f114eb.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/12.f165da3b.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/13.0b419ce3.js">
+    <link rel="stylesheet" href="/ElementVueSpringbootCodeTemplate/assets/css/14.styles.e491d3bf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/ElementVueSpringbootCodeTemplate/" class="home-link router-link-active"><!----><span class="site-name">
+      晓风轻Vue+SpringBoot代码模板
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/" class="nav-link">首页</a></div><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/note/" class="nav-link router-link-active">开发笔记</a></div><a href="https://github.com/xwjie/ElementVueSpringbootCodeTemplate" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/" class="nav-link">首页</a></div><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/note/" class="nav-link router-link-active">开发笔记</a></div><a href="https://github.com/xwjie/ElementVueSpringbootCodeTemplate" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>开发笔记</span><!----></p><ul class="sidebar-group-items"><li><a href="/ElementVueSpringbootCodeTemplate/note/" class="sidebar-link">开发笔记说明</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/use-redis-cache.html" class="sidebar-link">使用redis</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/update-elementui.html" class="sidebar-link">ElementUI升级2.0.2</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html" class="sidebar-link">使用H2数据库</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/vue-filter.html" class="sidebar-link">增加vue过滤器</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/enable-swagger2.html" class="sidebar-link">增加swagger2</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/vue-comps.html" class="sidebar-link">Vue组件</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/spring-security.html" class="active sidebar-link">Spring Security 使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-security.html#增加依赖" class="sidebar-link">增加依赖</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-security.html#response-多了三个头" class="sidebar-link">response 多了三个头</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-security.html#指定认证方式" class="sidebar-link">指定认证方式</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/spring-security.html#修改-x-frame-options" class="sidebar-link">修改 X-Frame-Options</a></li></ul></li><li><a href="/ElementVueSpringbootCodeTemplate/note/hibernate.html" class="sidebar-link">hibernate 笔记</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/jms.html" class="sidebar-link">JMS使用</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/springboot.html" class="sidebar-link">springboot笔记</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/keng.html" class="sidebar-link">踩坑记</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="spring-security-使用"><a href="#spring-security-使用" aria-hidden="true" class="header-anchor">#</a> Spring Security 使用</h1><h2 id="增加依赖"><a href="#增加依赖" aria-hidden="true" class="header-anchor">#</a> 增加依赖</h2><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>spring-boot-starter-security<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre><h2 id="response-多了三个头"><a href="#response-多了三个头" aria-hidden="true" class="header-anchor">#</a> response 多了三个头</h2><pre class="language-text"><code>X-Content-Type-Options:nosniff
+X-Frame-Options:DENY
+X-XSS-Protection:1; mode=block
+</code></pre><h2 id="指定认证方式"><a href="#指定认证方式" aria-hidden="true" class="header-anchor">#</a> 指定认证方式</h2><p>使用basic认证和普通的页面输入认证，只能选一种，否则返回401的时候还会重定向到登录页面。</p><ul><li>basis 认证</li></ul><pre class="language-java"><code><span class="token punctuation">.</span><span class="token function">httpBasic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><ul><li>页面认证</li></ul><pre class="language-java"><code><span class="token punctuation">.</span><span class="token function">formLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">loginPage</span><span class="token punctuation">(</span><span class="token string">&quot;/login&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">permitAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">and</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><p>完整：</p><pre class="language-java"><code><span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableWebSecurity</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">WebSecurityConfig</span> <span class="token keyword">extends</span> <span class="token class-name">WebSecurityConfigurerAdapter</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">configure</span><span class="token punctuation">(</span>HttpSecurity http<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+    	<span class="token comment">// 先放开</span>
+    	http<span class="token punctuation">.</span><span class="token function">authorizeRequests</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">anyRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">permitAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    	
+<span class="token comment">//        http</span>
+<span class="token comment">//            .authorizeRequests()</span>
+<span class="token comment">//                .antMatchers(&quot;/&quot;, &quot;/home&quot;,&quot;/resources/**&quot;, &quot;/favicon.ico&quot;).permitAll()</span>
+<span class="token comment">//                .anyRequest()</span>
+<span class="token comment">//                .authenticated()</span>
+<span class="token comment">//                .and()</span>
+<span class="token comment">//                // basic返回401 ，【不能】配置loginpage</span>
+<span class="token comment">//                .httpBasic()</span>
+<span class="token comment">//                .and()</span>
+<span class="token comment">//              // 不是http认证的时候，返回302，需要配置loginPage链接</span>
+<span class="token comment">////            .formLogin()</span>
+<span class="token comment">////                .loginPage(&quot;/login&quot;)</span>
+<span class="token comment">////                .permitAll()</span>
+<span class="token comment">////                .and()</span>
+<span class="token comment">//            .logout()</span>
+<span class="token comment">//                .permitAll();</span>
+        
+        <span class="token comment">//http.csrf().disable();</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">configure</span><span class="token punctuation">(</span>AuthenticationManagerBuilder auth<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        auth
+            <span class="token punctuation">.</span><span class="token function">inMemoryAuthentication</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">withUser</span><span class="token punctuation">(</span><span class="token string">&quot;xwjie&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">password</span><span class="token punctuation">(</span><span class="token string">&quot;xwjie&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">roles</span><span class="token punctuation">(</span><span class="token string">&quot;USER&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="修改-x-frame-options"><a href="#修改-x-frame-options" aria-hidden="true" class="header-anchor">#</a> 修改 X-Frame-Options</h2><p>spring security 默认的 <code>X-Frame-Options</code> 是 <code>deny</code> ，修改为 <code>SAMEORIGIN</code> ，否则连h2都无法嵌入显示了。如下：</p><pre class="language-java"><code>http<span class="token punctuation">.</span><span class="token function">headers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">frameOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sameOrigin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/ElementVueSpringbootCodeTemplate/note/vue-comps.html" class="prev">
+          Vue组件
+        </a></span><span class="next"><a href="/ElementVueSpringbootCodeTemplate/note/hibernate.html">
+          hibernate 笔记
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/ElementVueSpringbootCodeTemplate/assets/js/5.b0259ce2.js" defer></script><script src="/ElementVueSpringbootCodeTemplate/assets/js/app.63780be1.js" defer></script>
+  </body>
+</html>

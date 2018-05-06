@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>晓风轻Vue+SpringBoot代码模板 | hibernate 笔记</title>
+    <meta name="description" content="晓风轻Vue+SpringBoot代码模板">
+    
+    
+    <link rel="preload" href="/ElementVueSpringbootCodeTemplate/assets/css/14.styles.e491d3bf.css" as="style"><link rel="preload" href="/ElementVueSpringbootCodeTemplate/assets/js/app.63780be1.js" as="script"><link rel="preload" href="/ElementVueSpringbootCodeTemplate/assets/js/10.feb7dd37.js" as="script"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/4.0826e6e3.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/0.0469b2e3.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/1.b24e82eb.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/2.29db06ad.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/3.47a72772.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/5.b0259ce2.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/6.6ea7ec8b.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/7.fbff5130.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/8.5c948da2.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/9.18ddf435.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/11.50f114eb.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/12.f165da3b.js"><link rel="prefetch" href="/ElementVueSpringbootCodeTemplate/assets/js/13.0b419ce3.js">
+    <link rel="stylesheet" href="/ElementVueSpringbootCodeTemplate/assets/css/14.styles.e491d3bf.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/ElementVueSpringbootCodeTemplate/" class="home-link router-link-active"><!----><span class="site-name">
+      晓风轻Vue+SpringBoot代码模板
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/" class="nav-link">首页</a></div><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/note/" class="nav-link router-link-active">开发笔记</a></div><a href="https://github.com/xwjie/ElementVueSpringbootCodeTemplate" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/" class="nav-link">首页</a></div><div class="nav-item"><a href="/ElementVueSpringbootCodeTemplate/note/" class="nav-link router-link-active">开发笔记</a></div><a href="https://github.com/xwjie/ElementVueSpringbootCodeTemplate" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>开发笔记</span><!----></p><ul class="sidebar-group-items"><li><a href="/ElementVueSpringbootCodeTemplate/note/" class="sidebar-link">开发笔记说明</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/use-redis-cache.html" class="sidebar-link">使用redis</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/update-elementui.html" class="sidebar-link">ElementUI升级2.0.2</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/spring-jpa-data-use-h2-database.html" class="sidebar-link">使用H2数据库</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/vue-filter.html" class="sidebar-link">增加vue过滤器</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/enable-swagger2.html" class="sidebar-link">增加swagger2</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/vue-comps.html" class="sidebar-link">Vue组件</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/spring-security.html" class="sidebar-link">Spring Security 使用</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/hibernate.html" class="active sidebar-link">hibernate 笔记</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/hibernate.html#自动生成时间" class="sidebar-link">自动生成时间</a></li><li class="sidebar-sub-header"><a href="/ElementVueSpringbootCodeTemplate/note/hibernate.html#增加唯一主键" class="sidebar-link">增加唯一主键</a></li></ul></li><li><a href="/ElementVueSpringbootCodeTemplate/note/jms.html" class="sidebar-link">JMS使用</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/springboot.html" class="sidebar-link">springboot笔记</a></li><li><a href="/ElementVueSpringbootCodeTemplate/note/keng.html" class="sidebar-link">踩坑记</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="hibernate-笔记"><a href="#hibernate-笔记" aria-hidden="true" class="header-anchor">#</a> hibernate 笔记</h1><h2 id="自动生成时间"><a href="#自动生成时间" aria-hidden="true" class="header-anchor">#</a> 自动生成时间</h2><p>增加基类，把id和创建修改时间放到基类里面，并把类修改为 <code>abstract</code> 。</p><p>需要使用 <code>@MappedSuperclass</code> 注解。</p><p>使用 <code>@CreationTimestamp</code>  和 <code>@UpdateTimestamp</code> 自动生成对应的时间。</p><pre class="language-java"><code><span class="token keyword">package</span> cn<span class="token punctuation">.</span>xiaowenjie<span class="token punctuation">.</span>beans<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>Serializable<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Date<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>GeneratedValue<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>Id<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>MappedSuperclass<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>hibernate<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span>CreationTimestamp<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>hibernate<span class="token punctuation">.</span>annotations<span class="token punctuation">.</span>UpdateTimestamp<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> lombok<span class="token punctuation">.</span>Data<span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 基类
+ * 
+ * @author 晓风轻 https://github.com/xwjie/
+ */</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@MappedSuperclass</span>
+<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">BaseEntity</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
+
+	<span class="token annotation punctuation">@Id</span>
+	<span class="token annotation punctuation">@GeneratedValue</span>
+	<span class="token keyword">private</span> <span class="token keyword">long</span> id<span class="token punctuation">;</span>
+
+	<span class="token annotation punctuation">@CreationTimestamp</span>
+	<span class="token keyword">private</span> Date createTime<span class="token punctuation">;</span>
+
+	<span class="token annotation punctuation">@UpdateTimestamp</span>
+	<span class="token keyword">private</span> Date updateTime<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+
+</code></pre><h2 id="增加唯一主键"><a href="#增加唯一主键" aria-hidden="true" class="header-anchor">#</a> 增加唯一主键</h2><p>User表：</p><pre class="language-java"><code><span class="token annotation punctuation">@Table</span><span class="token punctuation">(</span>indexes <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token annotation punctuation">@Index</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">&quot;user_name_unique&quot;</span><span class="token punctuation">,</span> columnList <span class="token operator">=</span> <span class="token string">&quot;name&quot;</span><span class="token punctuation">,</span> unique <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/ElementVueSpringbootCodeTemplate/note/spring-security.html" class="prev">
+          Spring Security 使用
+        </a></span><span class="next"><a href="/ElementVueSpringbootCodeTemplate/note/jms.html">
+          JMS使用
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/ElementVueSpringbootCodeTemplate/assets/js/10.feb7dd37.js" defer></script><script src="/ElementVueSpringbootCodeTemplate/assets/js/app.63780be1.js" defer></script>
+  </body>
+</html>
