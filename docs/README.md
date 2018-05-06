@@ -29,7 +29,7 @@
 
 ### 测试数据
 
-先执行 `junit` 方法 `SpringbootCodeTemplateApplicationTests.addTestData` 增加测试数据。
+`CreateTestData` 类会自动执行，创建测试数据。
 
 ### 后台
 
@@ -49,5 +49,11 @@
 ## 辅助操作界面 
 
 * swagger [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
 * H2维护界面 [http://localhost:8080/h2-console/](http://localhost:8080/h2-console/)
+
+1. JDBC URL： jdbc:h2:~/mydb.h2
+2. 用户名：sa
+3. 密码：sa
+
 * 自己编写的Cache界面  [http://localhost:8080/cache.html](http://localhost:8080/cache.html)

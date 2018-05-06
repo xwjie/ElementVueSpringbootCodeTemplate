@@ -122,6 +122,10 @@ public Collection<Config> getAll() {
 
 访问 http://127.0.0.1:8080/h2-console/
 
+1. JDBC URL： jdbc:h2:~/mydb.h2
+2. 用户名：sa
+3. 密码：sa
+
 ![](./pictures/h2-1.png)
 
 可以选择中文界面，赞，填写好url，链接进去：
