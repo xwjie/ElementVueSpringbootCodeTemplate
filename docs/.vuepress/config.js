@@ -1,6 +1,6 @@
 module.exports = {
-  title: '晓风轻Vue+SpringBoot代码模板',
-  description: '晓风轻Vue+SpringBoot代码模板',
+  title: '晓风轻SpringBoot+Vue代码模板',
+  description: '晓风轻SpringBoot+Vue代码模板',
   dest: './dist',    // 设置输出目录
   base: '/ElementVueSpringbootCodeTemplate/', // 设置站点根路径
   port: 7070,
