@@ -1,4 +1,6 @@
-# 定义filter
+# 增加vue过滤器
+
+## 定义filter
 
 [官方文档](https://cn.vuejs.org/v2/guide/filters.html) 。 这里定义的是全局的，也可以定义局部的。
 
@@ -31,7 +33,7 @@ util.isMatch = function(e, key){
 }
 ```
 
-# 使用
+## 使用
 
 给要过滤的组件传入 `keyword`
 
@@ -66,6 +68,6 @@ export default {
   ...
 ```
 
-# 效果图
+## 效果图
 
-![](/pictures/vue-filter.gif)
+![](./pictures/vue-filter.gif)

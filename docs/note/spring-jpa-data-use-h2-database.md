@@ -1,6 +1,8 @@
-# ¼ÓÈëÒÀÀµ
+# ä½¿ç”¨H2æ•°æ®åº“
 
-```
+## åŠ å…¥ä¾èµ–
+
+```xml
 <dependency>
   <groupId>com.h2database</groupId>
   <artifactId>h2</artifactId>
@@ -12,9 +14,9 @@
 
 ```
 
-# ¶¨ÒåÊµÌåÀà
+## å®šä¹‰å®ä½“ç±»
 
-```Java
+```java
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -36,19 +38,19 @@ public class Config implements Serializable {
   private long id;
 
   /**
-   * ´´½¨Õß
+   * åˆ›å»ºè€…
    */
   private long creator;
 }
 ```
 
-# ¶¨ÒåDao£¨ Repository £©
+## å®šä¹‰Daoï¼ˆ Repository ï¼‰
 
-¿ÉÒÔÊ¹ÓÃ `PagingAndSortingRepository` »òÕß `CrudRepository`¡£
+å¯ä»¥ä½¿ç”¨ `PagingAndSortingRepository` æˆ–è€… `CrudRepository`ã€‚
 
-Ôö¼ÓÁËÒ»¸ö¸ù¾İÃû³Æ²éÕÒµÄ·½·¨¡£
+å¢åŠ äº†ä¸€ä¸ªæ ¹æ®åç§°æŸ¥æ‰¾çš„æ–¹æ³•ã€‚
 
-```
+```java
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 import cn.xiaowenjie.beans.Config;
@@ -58,9 +60,9 @@ public interface ConfigDao extends PagingAndSortingRepository<Config, Long> {
 }
 ```
 
-# ÅäÖÃÊı¾İ¿â
+## é…ç½®æ•°æ®åº“
 
-ÅäÖÃÊ¹ÓÃh2Êı¾İ¿â£¬ÄÚ´æĞÍµÄÊ±ºòurlÎª `jdbc:h2:mem:mydb` ¡£ ÎÄ¼şÀàĞÍÎª£º`jdbc:h2:file:~/mydb.h2`
+é…ç½®ä½¿ç”¨h2æ•°æ®åº“ï¼Œå†…å­˜å‹çš„æ—¶å€™urlä¸º `jdbc:h2:mem:mydb` ã€‚ æ–‡ä»¶ç±»å‹ä¸ºï¼š`jdbc:h2:file:~/mydb.h2`
 
 ```
 spring:
@@ -89,11 +91,11 @@ spring:
         trace: true
 ```
 
-# ÒıÈëguava£¬ °Ñ²éÑ¯½á¹û×ªÎªlist
+## å¼•å…¥guavaï¼Œ æŠŠæŸ¥è¯¢ç»“æœè½¬ä¸ºlist
 
-Ê¹ÓÃjpa²éÑ¯½á¹ûÖĞ£¬·µ»ØµÄÎª iterable£¬ĞèÒª×ª»»Îªlist·µ»Ø¸øÇ°Ì¨¡£
+ä½¿ç”¨jpaæŸ¥è¯¢ç»“æœä¸­ï¼Œè¿”å›çš„ä¸º iterableï¼Œéœ€è¦è½¬æ¢ä¸ºlistè¿”å›ç»™å‰å°ã€‚
 
-```
+```xml
 <dependency>
   <groupId>com.google.guava</groupId>
   <artifactId>guava</artifactId>
@@ -101,11 +103,11 @@ spring:
 </dependency>
 ```
 
-```Java
+```java
 import com.google.common.collect.Lists;
 
 public Collection<Config> getAll() {
-  // Ğ£ÑéÍ¨¹ıºó´òÓ¡ÖØÒªµÄÈÕÖ¾
+  // æ ¡éªŒé€šè¿‡åæ‰“å°é‡è¦çš„æ—¥å¿—
   logger.info("getAll start ...");
 
   List<Config> data = Lists.newArrayList(dao.findAll());
@@ -116,29 +118,29 @@ public Collection<Config> getAll() {
 }
 ```
 
-# Ê¹ÓÃh2µÄweb console
+## ä½¿ç”¨h2çš„web console
 
-·ÃÎÊ http://127.0.0.1:8080/h2-console/
+è®¿é—® http://127.0.0.1:8080/h2-console/
 
-![](/pictures/h2-1.png)
+![](./pictures/h2-1.png)
 
-¿ÉÒÔÑ¡ÔñÖĞÎÄ½çÃæ£¬ÔŞ£¬ÌîĞ´ºÃurl£¬Á´½Ó½øÈ¥£º
-
-
-![](/pictures/h2-2.png)
-
-Ê¹ÓÃÎÄ¼şÀàĞÍºó£¬»áÔÚÓÃ»§µÄÄ¿Â¼ÏÂ´´½¨Êı¾İ¿âÎÄ¼ş£¬traceÎÄ¼şÀïÃæÊÇÎÄ±¾£¬ÎªÊı¾İ¿â´íÎóµÄÒ»Ğ©ÈÕÖ¾¶ÑÕ»¡£
+å¯ä»¥é€‰æ‹©ä¸­æ–‡ç•Œé¢ï¼Œèµï¼Œå¡«å†™å¥½urlï¼Œé“¾æ¥è¿›å»ï¼š
 
 
-![](/pictures/h2-3.png)
+![](./pictures/h2-2.png)
 
->×¢Òâ£ºÉÏÏßÎÈ¶¨µÄÊ±ºò×¢Òâ°Ñ¿ØÖÆÌ¨¹Øµô¡£
+ä½¿ç”¨æ–‡ä»¶ç±»å‹åï¼Œä¼šåœ¨ç”¨æˆ·çš„ç›®å½•ä¸‹åˆ›å»ºæ•°æ®åº“æ–‡ä»¶ï¼Œtraceæ–‡ä»¶é‡Œé¢æ˜¯æ–‡æœ¬ï¼Œä¸ºæ•°æ®åº“é”™è¯¯çš„ä¸€äº›æ—¥å¿—å †æ ˆã€‚
 
-# Ê¹ÓÃjpa
 
-Ö±½Ó×¢Èë Repository `ConfigDao` £¬¾ßÌå²Î¿¼¹¤³Ì´úÂë `ConfigService`¡£
+![](./pictures/h2-3.png)
 
-```Java
+>æ³¨æ„ï¼šä¸Šçº¿ç¨³å®šçš„æ—¶å€™æ³¨æ„æŠŠæ§åˆ¶å°å…³æ‰ã€‚
+
+## ä½¿ç”¨jpa
+
+ç›´æ¥æ³¨å…¥ Repository `ConfigDao` ï¼Œå…·ä½“å‚è€ƒå·¥ç¨‹ä»£ç  `ConfigService`ã€‚
+
+```java
 package cn.xiaowenjie.services;
 
 import static cn.xiaowenjie.common.utils.CheckUtil.check;
@@ -159,9 +161,9 @@ import cn.xiaowenjie.beans.Config;
 import cn.xiaowenjie.daos.ConfigDao;
 
 /**
- * ÅäÖÃÒµÎñ´¦ÀíÀà
+ * é…ç½®ä¸šåŠ¡å¤„ç†ç±»
  * 
- * @author Ğ¤ÎÄ½Ü https://github.com/xwjie/
+ * @author æ™“é£è½» https://github.com/xwjie/
  *
  */
 @Service
@@ -173,7 +175,7 @@ public class ConfigService {
   ConfigDao dao;
 
   public Collection<Config> getAll() {
-    // Ğ£ÑéÍ¨¹ıºó´òÓ¡ÖØÒªµÄÈÕÖ¾
+    // æ ¡éªŒé€šè¿‡åæ‰“å°é‡è¦çš„æ—¥å¿—
     logger.info("getAll start ...");
 
     List<Config> data = Lists.newArrayList(dao.findAll());
@@ -184,32 +186,32 @@ public class ConfigService {
   }
 
   public long add(Config config) {
-    // ²ÎÊıĞ£Ñé
+    // å‚æ•°æ ¡éªŒ
     notNull(config, "param.is.null");
     notEmpty(config.getName(), "name.is.null");
     notEmpty(config.getValue(), "value.is.null");
 
-    // Ğ£ÑéÍ¨¹ıºó´òÓ¡ÖØÒªµÄÈÕÖ¾
+    // æ ¡éªŒé€šè¿‡åæ‰“å°é‡è¦çš„æ—¥å¿—
     logger.info("add config:" + config);
 
-    // Ğ£ÑéÖØ¸´
+    // æ ¡éªŒé‡å¤
     check(null == dao.findByName(config.getName()), "name.repeat");
 
     config = dao.save(config);
 
-    // ĞŞ¸Ä²Ù×÷ĞèÒª´òÓ¡²Ù×÷½á¹û
+    // ä¿®æ”¹æ“ä½œéœ€è¦æ‰“å°æ“ä½œç»“æœ
     logger.info("add config success, id:" + config.getId());
 
     return config.getId();
   }
 
   public boolean delete(long id) {
-    // ²ÎÊıĞ£Ñé
+    // å‚æ•°æ ¡éªŒ
     check(id > 0L, "id.error", id);
 
     dao.delete(id);
 
-    // ĞŞ¸Ä²Ù×÷ĞèÒª´òÓ¡²Ù×÷½á¹û
+    // ä¿®æ”¹æ“ä½œéœ€è¦æ‰“å°æ“ä½œç»“æœ
     logger.info("delete config success, id:" + id);
 
     return true;

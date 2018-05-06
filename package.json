@@ -1,0 +1,34 @@
+{
+  "name": "elementvuespringbootcodetemplate",
+  "version": "1.0.0",
+  "description": "晓风轻的Vue+ElementUI+Springbooth框架代码",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+     "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "gh-pages -d dist",
+    "deploy:build": "npm run docs:build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xwjie/ElementVueSpringbootCodeTemplate.git"
+  },
+  "keywords": [
+    "晓风轻",
+    "ElementUI",
+    "Vue",
+    "Springboot"
+  ],
+  "author": "xwjie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xwjie/ElementVueSpringbootCodeTemplate/issues"
+  },
+  "homepage": "https://github.com/xwjie/ElementVueSpringbootCodeTemplate#readme",
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  }
+}

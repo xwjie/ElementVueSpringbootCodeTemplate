@@ -1,13 +1,15 @@
-# Ôö¼ÓÒÀÀµ
+# Spring Security ä½¿ç”¨
 
-```XML
+## å¢åŠ ä¾èµ–
+
+```xml
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-security</artifactId>
 </dependency>
 ```
 
-# response ¶àÁËÈı¸öÍ·
+## response å¤šäº†ä¸‰ä¸ªå¤´
 
 ```
 X-Content-Type-Options:nosniff
@@ -15,32 +17,32 @@ X-Frame-Options:DENY
 X-XSS-Protection:1; mode=block
 ```
 
-# Ö¸¶¨ÈÏÖ¤·½Ê½
+## æŒ‡å®šè®¤è¯æ–¹å¼
 
-Ê¹ÓÃbasicÈÏÖ¤ºÍÆÕÍ¨µÄÒ³ÃæÊäÈëÈÏÖ¤£¬Ö»ÄÜÑ¡Ò»ÖÖ£¬·ñÔò·µ»Ø401µÄÊ±ºò»¹»áÖØ¶¨Ïòµ½µÇÂ¼Ò³Ãæ¡£
+ä½¿ç”¨basicè®¤è¯å’Œæ™®é€šçš„é¡µé¢è¾“å…¥è®¤è¯ï¼Œåªèƒ½é€‰ä¸€ç§ï¼Œå¦åˆ™è¿”å›401çš„æ—¶å€™è¿˜ä¼šé‡å®šå‘åˆ°ç™»å½•é¡µé¢ã€‚
 
-* basis ÈÏÖ¤
+* basis è®¤è¯
 
-```
+```java
 .httpBasic().and()
 ```
 
-* Ò³ÃæÈÏÖ¤
+* é¡µé¢è®¤è¯
 
-```Java
+```java
 .formLogin().loginPage("/login").permitAll().and()
 ```
 
-ÍêÕû£º
+å®Œæ•´ï¼š
 
-```Java
+```java
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	// ÏÈ·Å¿ª
+    	// å…ˆæ”¾å¼€
     	http.authorizeRequests().anyRequest().permitAll();
     	
 //        http
@@ -49,10 +51,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .anyRequest()
 //                .authenticated()
 //                .and()
-//                // basic·µ»Ø401 £¬¡¾²»ÄÜ¡¿ÅäÖÃloginpage
+//                // basicè¿”å›401 ï¼Œã€ä¸èƒ½ã€‘é…ç½®loginpage
 //                .httpBasic()
 //                .and()
-//              // ²»ÊÇhttpÈÏÖ¤µÄÊ±ºò£¬·µ»Ø302£¬ĞèÒªÅäÖÃloginPageÁ´½Ó
+//              // ä¸æ˜¯httpè®¤è¯çš„æ—¶å€™ï¼Œè¿”å›302ï¼Œéœ€è¦é…ç½®loginPageé“¾æ¥
 ////            .formLogin()
 ////                .loginPage("/login")
 ////                .permitAll()
@@ -72,3 +74,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 
+## ä¿®æ”¹ X-Frame-Options
+
+spring security é»˜è®¤çš„ `X-Frame-Options` æ˜¯ `deny` ï¼Œä¿®æ”¹ä¸º `SAMEORIGIN` ï¼Œå¦åˆ™è¿h2éƒ½æ— æ³•åµŒå…¥æ˜¾ç¤ºäº†ã€‚å¦‚ä¸‹ï¼š
+
+```java
+http.headers().frameOptions().sameOrigin();
+```
