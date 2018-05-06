@@ -25,7 +25,7 @@
 ### 数据库
 使用 `h2` 内置数据库演示 `spring data jpa` 功能。无需任何配置。
 
-使用了redis做cache，可以启动redis，不启动也暂时没有影响。
+使用了redis做cache，需启动redis，默认端口。
 
 ### 测试数据
 
@@ -33,7 +33,11 @@
 
 ### 后台
 
-导入目录`JavaSource`到IDE，直接启动springboot工程即可。默认8080端口
+导入目录`JavaSource`到IDE，使用了[lombok](https://projectlombok.org/)，需要在IDE里面先安装插件。
+
+然后需要把 `source\src\common` 导入为源代码目录即可。（Eclipse里面在该目录选择右键 "Build Path" -> "Use as Source Folder"）
+
+直接启动springboot工程即可。默认8080端口
 
 ### 前台
 
