@@ -6,3 +6,18 @@
 相关文章：[程序员你为什么这么累？](https://zhuanlan.zhihu.com/p/28705206)
 
 ![](docs/main.png)
+
+# 使用vuepress编译文档
+
+```
+// 全局安装vuepress
+npm i -g vuepress
+
+npm i
+
+// 查看文档，打开7070端口
+npm run docs:dev
+
+// 发布
+npm run deploy:build
+```

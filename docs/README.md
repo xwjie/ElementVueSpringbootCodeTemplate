@@ -1,6 +1,6 @@
 # 介绍
 
-使用Vue+VueX+ElementUI+SpringBoot的代码框架。详细讲解：[程序员你为什么这么累？](https://zhuanlan.zhihu.com/p/28705206)
+使用Vue+VueX+ElementUI+SpringBoot的代码框架。相关文章讲解：[程序员你为什么这么累？](https://zhuanlan.zhihu.com/p/28705206)
 
 
 ![](./main.png)
@@ -45,5 +45,5 @@
 ## 辅助操作界面 
 
 * swagger [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-* H2维护界面 [http://127.0.0.1:8080/h2-console/](http://127.0.0.1:8080/h2-console/)
+* H2维护界面 [http://localhost:8080/h2-console/](http://localhost:8080/h2-console/)
 * 自己编写的Cache界面  [http://localhost:8080/cache.html](http://localhost:8080/cache.html)
