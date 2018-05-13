@@ -55,12 +55,6 @@ public class ConfigController {
 		return new ResultBean<Long>(configService.add(config));
 	}
 
-	// FIXME 支持form表单格式
-	@PostMapping("/add2")
-	public ResultBean<Long> add2(Config config) {
-		return new ResultBean<Long>(configService.add(config));
-	}
-
 	@PostMapping("/delete")
 	public ResultBean<Boolean> delete(long id) {
 		return new ResultBean<Boolean>(configService.delete(id));

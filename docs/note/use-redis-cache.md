@@ -6,7 +6,7 @@
 
 ## 增加redis依赖
 
-```
+```xml
 <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-data-redis</artifactId>
@@ -28,7 +28,7 @@ spring:
 
 继承CachingConfigurerSupport，增加 `@EnableCaching` 注解，需要重写 `keyGenerator` 方法。
 
-```Java
+```java
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport
@@ -41,7 +41,7 @@ key序列化使用`StringRedisSerializer`, 不配置的话key前面会出现乱�
 value序列化使用 `GenericJackson2JsonRedisSerializer` ，保存为Json格式。该类目前反序列化还有一些bug，只能反序列化实现了Serialize的类。
 
 
-```Java
+```java
 @Bean
 public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory) {
   RedisTemplate template = new RedisTemplate();
@@ -69,7 +69,7 @@ public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factor
 
 配置 CacheManager，包括指定缓存和默认缓存的超时时间的配置。
 
-```Java
+```java
 @Bean
 public CacheManager cacheManager(RedisTemplate redisTemplate) {
   RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
@@ -91,7 +91,7 @@ public CacheManager cacheManager(RedisTemplate redisTemplate) {
 
 重写 `keyGenerator`，可以支持使用@Cacheable不指定Key。
 
-```Java
+```java
 @Override
 public KeyGenerator keyGenerator() {
   return new KeyGenerator() {
@@ -123,7 +123,7 @@ public KeyGenerator keyGenerator() {
 
 所以把下面的查询代码修改一下，用 实现了 `Serializable` 的 `ArrayList` 包装返回。
 
-```Java
+```java
 @Cacheable("config")
 @Override
 public Collection<Config> getAll() {
@@ -151,7 +151,7 @@ public boolean delete(long id) {
 
 也可以定时清空cache，使用 `@EnableScheduling` 和 `@Scheduled` 注解。
 
-```Java
+```java
 @Component
 @EnableScheduling
 public class ClearCacheTask {

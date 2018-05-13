@@ -33,11 +33,9 @@
 
 ### 后台
 
-导入目录`JavaSource`到IDE，使用了[lombok](https://projectlombok.org/)，需要在IDE里面先安装插件。
+导入Maven工程目录`JavaSource`到IDE，使用了[lombok](https://projectlombok.org/)，需要在IDE里面先安装插件。
 
-然后需要把 `source\src\common` 导入为源代码目录即可。（Eclipse里面在该目录选择右键 "Build Path" -> "Use as Source Folder"）
-
-直接启动springboot工程即可。默认8080端口
+直接启动 `SpringbootCodeTemplateApplication` 即可。默认8080端口
 
 ### 前台
 

@@ -4,7 +4,7 @@
 
 [官方文档](https://cn.vuejs.org/v2/guide/filters.html) 。 这里定义的是全局的，也可以定义局部的。
 
-```JavaScript
+```js
 // 定义全局filter
 Vue.filter('filterKeyword', function (value, key) {
     if (!key) return value;
@@ -14,7 +14,7 @@ Vue.filter('filterKeyword', function (value, key) {
 
 判断对象是否包含关键字
 
-```JavaScript
+```js
 /**
  * 对象是否包含指定关键字 key
  */
@@ -37,7 +37,7 @@ util.isMatch = function(e, key){
 
 给要过滤的组件传入 `keyword`
 
-```JavaScript
+```js
 <el-input
     placeholder="请输入内容"
     prefix-icon="el-icon-search"
@@ -50,7 +50,7 @@ util.isMatch = function(e, key){
 
 组件 `ConfigTable` 中增加 `keyword` props。
 
-```JavaScript
+```js
 export default {
   props: ["keyword"],
   ...
@@ -59,7 +59,7 @@ export default {
 
 `ConfigTable` 中需要过滤的控件`el-table`上增加 `filterKeyword(keyword)` 。
 
-```JavaScript
+```js
   <el-table
     :data="configs.rows | filterKeyword(keyword)"
     border
