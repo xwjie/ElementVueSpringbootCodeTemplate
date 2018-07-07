@@ -115,10 +115,12 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.2.2</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-artemis</artifactId>

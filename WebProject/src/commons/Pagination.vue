@@ -33,6 +33,11 @@ export default {
         return {};
       }
     },
+    pageSize:{
+      type: Number,
+      required: false,
+      default: 10
+    },
     keyword: {
       type: String,
       required: false,
@@ -78,7 +83,7 @@ export default {
   data() {
     return {
       page: 1,
-      pagesize: 10,
+      pagesize: this.pageSize,
       total: 0
     };
   },

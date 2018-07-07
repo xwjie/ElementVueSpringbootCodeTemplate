@@ -26,21 +26,30 @@ Vue.use(VueI18n);
 
 // 工具类
 Vue.prototype.info = function (msg) {
-    this.$message(msg);
+    //this.$message(msg);
+    this.$message({
+        type: "success",
+        message: msg
+    });
 }
 
 Vue.prototype.error = function (msg) {
     this.$message({ type: 'error', message: msg });
 }
 
+Vue.prototype.confirm = function () {
+    return this.$confirm(...arguments);
+}
+
+// 请求
 Vue.prototype.ajax = Util.ajax;
 
 // commons 组件
-import {registerCommonComponents} from './commons';
+import { registerCommonComponents } from './commons';
 registerCommonComponents();
 
 //
-import {registerComponents} from './components';
+import { registerComponents } from './components';
 
 registerComponents();
 

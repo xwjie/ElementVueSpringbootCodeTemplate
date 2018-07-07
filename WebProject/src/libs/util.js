@@ -41,9 +41,14 @@ function handlerData(response) {
 
 //添加一个返回拦截器
 axiosInstance.interceptors.response.use(function (response) {
+    let data = response.data
+
+    console.log('axiosInstance.interceptors', data);
+    console.log('axiosInstance.interceptors', data.code);
+
     //对返回的数据进行一些处理
     // 全局的没有登录异常单独处理
-    if (response.status == 401 || response.data.code === -1) {
+    if (response.status == 401 || data.code === -1) {
         console.log('no login');
 
         // 通知打开登录窗口

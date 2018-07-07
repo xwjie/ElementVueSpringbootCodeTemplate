@@ -21,7 +21,7 @@ public class SpringbootCodeTemplateApplication {
 	@Bean
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-		messageSource.setBasenames("i18n/messages", "i18n/errormsg");
+		messageSource.setBasenames("i18n/messages"); // , "i18n/errormsg"
 		messageSource.setDefaultEncoding("UTF-8");
 		return messageSource;
 	}

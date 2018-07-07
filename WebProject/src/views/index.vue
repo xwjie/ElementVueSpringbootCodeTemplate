@@ -17,13 +17,23 @@
 <template>
 <el-container style="height:100%">
   <el-header>
-    <h1>晓风轻 Element Vue Springboot 代码模板
-      <el-button type="primary" @click="handleStart">Hello World</el-button>
-    </h1>
-      <h2 v-if="user != null">当前用户：{{user.nick}}
-        <el-button type="danger" @click="logout">退出</el-button>
-    </h2>
+    <el-row  type="flex" justify="center" align="middle">
+      <el-col :span="16"><div class="grid-content bg-purple">
+        <h1>晓风轻 Element Vue Springboot 代码模板</h1>
+        </div></el-col>
+      <el-col :span="4"><div class="grid-content bg-purple-light">
+        <el-button type="primary" @click="handleStart">Hello World</el-button></div></el-col>
+      <el-col :span="4">
+        <div class="grid-content bg-purple-light text-right">
+          <span v-if="user != null">当前用户：{{user.nick}}
+            <el-button type="danger" @click="logout">退出</el-button>
+          </span>
+          <span v-else><el-button type="danger" @click="loginOpen">点击登陆</el-button></span>
+        </div></el-col>
+    </el-row>
   </el-header>
+
+
   <el-container>
     <el-aside style="width:auto;">
       <!--
@@ -45,23 +55,29 @@
           </template>
           <el-menu-item-group>
             <template slot="title">表格</template>
-            <el-menu-item index="1-1" @click="addTab('最基本表格', 'ConfigTableSimple')">最基本表格</el-menu-item>
-            <el-menu-item index="1-2" @click="addTab('前台数据过滤', 'ConfigTableSimpleFilter')">前台数据过滤</el-menu-item>
-            <el-menu-item index="1-2" @click="addTab('后台数据过滤', 'ConfigTable')">后台数据过滤</el-menu-item>
+            <el-menu-item index="1-11" @click="addTab('最基本表格', 'ConfigTableSimple')">最基本表格</el-menu-item>
+            <el-menu-item index="1-12" @click="addTab('前台数据过滤', 'ConfigTableSimpleFilter')">前台数据过滤</el-menu-item>
+            <el-menu-item index="1-13" @click="addTab('后台数据过滤', 'ConfigTable')">后台数据过滤</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group title="树">
-            <el-menu-item index="1-3" @click="addTab('简单树', 'SimpleTree')">简单树</el-menu-item>
-            <el-menu-item index="1-3" @click="addTab('简单的带图标树', 'SimpleTreeWithIcon')">简单的带图标树</el-menu-item>
+            <el-menu-item index="1-21" @click="addTab('简单树', 'SimpleTree')">简单树</el-menu-item>
+            <el-menu-item index="1-22" @click="addTab('简单的带图标树', 'SimpleTreeWithIcon')">简单的带图标树</el-menu-item>
           </el-menu-item-group>
-          <el-submenu index="1-4">
+          <el-menu-item-group title="上传组件">
+            <el-menu-item index="1-31" @click="addTab('上传组件', 'UploadFile')">上传组件</el-menu-item>
+          </el-menu-item-group>
+          <el-submenu index="1-9">
             <template slot="title">选项4</template>
-            <el-menu-item index="1-4-1">选项1</el-menu-item>
+            <el-menu-item index="1-91">选项1</el-menu-item>
           </el-submenu>
         </el-submenu>
-        <el-menu-item index="2">
-          <i class="el-icon-menu"></i>
-          <span slot="title">导航二</span>
-        </el-menu-item>
+
+        <el-menu-item index="9-1" @click="addTab('系统配置', 'ConfigTable2')">
+          <template slot="title" collapse=false>
+            <i class="el-icon-setting"></i>
+            <span>系统配置</span>
+          </template></el-menu-item>
+
         <el-submenu index="3">
           <template slot="title" collapse=false>
             <i class="el-icon-setting"></i>
@@ -91,7 +107,6 @@
 </el-container>
 </template>
 <script>
-
 export default {
   created() {
     // 载入config数据
@@ -107,20 +122,27 @@ export default {
       keyword: "",
       isCollapse: false,
 
-      menus: [
-        {}
-      ],
+      menus: [{}],
 
       //Tabs
       selectTabName: "ConfigAdd",
       tabs: {
-        ConfigAdd : {
+        ConfigAdd: {
           title: "新建页面",
           name: "ConfigAdd",
           currentView: "ConfigAdd"
         }
-      },
+      }
     };
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.ajax.post("/app/user").then(result => {
+        if (result.code == 0) {
+          this.user = result.data;
+        }
+      });
+    });
   },
   methods: {
     handleStart() {
@@ -141,15 +163,15 @@ export default {
     logout() {
       this.ajax.post("/app/logout").then(result => {
         if (result.code == 0) {
-          self.user = null;
+          this.user = null;
         } else {
-          self.error(result.msg);
+          this.error(result.msg);
         }
       });
     },
-    addTab(targetName , commentName) {
+    addTab(targetName, commentName) {
       // 如果已经存在
-      if(this.tabs[commentName] ){
+      if (this.tabs[commentName]) {
         this.selectTabName = commentName;
         return;
       }
@@ -158,7 +180,7 @@ export default {
       this.$set(this.tabs, commentName, {
         title: targetName,
         name: commentName,
-        currentView: commentName 
+        currentView: commentName
       });
 
       this.selectTabName = commentName;
@@ -167,11 +189,18 @@ export default {
       this.$delete(this.tabs, targetName);
 
       // 选中第一个tab
-      for ( let key in this.tabs ) {
+      for (let key in this.tabs) {
         this.selectTabName = key;
         break;
-      };
+      }
     }
   }
 };
 </script>
+
+<style>
+  .text-right{
+    padding-right:0px;
+    text-align: right;
+  }
+</style>

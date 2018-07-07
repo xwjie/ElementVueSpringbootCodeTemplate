@@ -2,6 +2,7 @@ package cn.xiaowenjie.common.utils;
 
 import java.util.Locale;
 
+import cn.xiaowenjie.common.consts.Roles;
 import org.apache.log4j.MDC;
 
 import cn.xiaowenjie.beans.User;
@@ -82,4 +83,11 @@ public class UserUtil {
 		MDC.remove(KEY_USER);
 	}
 
+	/**
+	 * 是否管理员
+	 * @return
+	 */
+	public static boolean isAdmin() {
+		return Roles.ADMIN.equals(getUser().getRole());
+	}
 }

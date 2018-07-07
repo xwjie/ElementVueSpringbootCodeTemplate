@@ -24,4 +24,13 @@ public class UserService {
 		return userDao.findByName(username);
 	}
 
+	/**
+	 * FIXME
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	public User login(String username, String password) {
+		return findUser(username);
+	}
 }
