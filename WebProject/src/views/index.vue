@@ -76,18 +76,31 @@
           <template slot="title" collapse=false>
             <i class="el-icon-setting"></i>
             <span>系统配置</span>
-          </template></el-menu-item>
+          </template>
+        </el-menu-item>
 
-        <el-submenu index="3">
+        <el-submenu index="4">
+          <template slot="title" collapse=false>
+            <i class="el-icon-setting"></i>
+            <span>日志分析</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item index="4-1" @click="addTab('上传日志', 'UploadFile')">上传日志</el-menu-item>
+            <el-menu-item index="4-2" @click="addTab('图表分析', 'SelectUser')">图表分析</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
+
+        <el-submenu index="0">
           <template slot="title" collapse=false>
             <i class="el-icon-setting"></i>
             <span>自定义组件</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="3-1" >分页组件</el-menu-item>
-            <el-menu-item index="3-2" @click="addTab('选人组件', 'SelectUser')">选人组件</el-menu-item>
+            <el-menu-item index="0-1" >分页组件</el-menu-item>
+            <el-menu-item index="0-2" @click="addTab('选人组件', 'SelectUser')">选人组件</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
+
       </el-menu>
     </el-aside>
     <el-main>      

@@ -2,6 +2,8 @@ package cn.xiaowenjie.common.utils;
 
 import javax.annotation.PostConstruct;
 
+import cn.xiaowenjie.daos.ConfigDao;
+import cn.xiaowenjie.tool.ConfigUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Configuration;
@@ -24,10 +26,15 @@ public class StaticFieldInjectionConfiguration {
 	@Autowired
 	UserService userService;
 
+	@Autowired
+	ConfigDao configDao;
+
 	@PostConstruct
 	private void init() {
 		System.out.println("\n\n-----StaticFieldInjectionConfiguration----\n\n");
 		CheckUtil.setResources(resources);
 		UserFilter.setUserService(userService);
+
+		ConfigUtil.setConfigDao(configDao);
 	}
 }

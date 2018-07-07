@@ -21,15 +21,14 @@
         fixed
         sortable
         prop="id"
-        label="ID"
-        
-        width="150">
+        label="ID"        
+        width="70">
       </el-table-column>
       <el-table-column
         prop="name"
         sortable
         label="名称"
-        width="300">
+        width="200">
       </el-table-column>
       <el-table-column
         sortable

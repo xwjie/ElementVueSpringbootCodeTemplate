@@ -1,16 +1,18 @@
 <template>
 <div>
-    支持2种上传方式。
 <el-row :gutter="20">
   <el-col :span="12">
     <div class="grid-content bg-purple">
         <el-upload
         class="upload-demo"
         ref="upload"
-        action="/uploadfile/upload"
+        :multiple="true"
+        action="/logparse/upload"
         :on-preview="handlePreview"
         :on-remove="handleRemove"
+        :before-remove="beforeRemove"
         :file-list="fileList"
+        :before-upload="beforeUpload"
         :auto-upload="false">
         <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
         <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
@@ -23,7 +25,7 @@
         <el-upload
             class="upload-demo"
             drag
-            action="/uploadfile/upload"
+            action="/logparse/upload"
             multiple>
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
@@ -41,16 +43,6 @@ export default {
   data() {
     return {
       fileList: [
-        {
-          name: "food.jpeg",
-          url:
-            "https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100"
-        },
-        {
-          name: "food2.jpeg",
-          url:
-            "https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100"
-        }
       ]
     };
   },
@@ -67,6 +59,31 @@ export default {
           fileList.length} 个文件`
       );
     },
+    beforeUpload(file) {
+      console.log("before-upload", file);
+
+      let param = new FormData(); // 创建form对象
+
+      // file对象是 beforeUpload参数
+      param.append("file", file, file.name);
+
+      let config = {
+        headers: { "Content-Type": "multipart/form-data" }
+      };
+
+      // 添加请求头
+      this.ajax.post("/logparse/upload", param, config).then(result => {
+        if (result.code == 0) {
+          this.fileList.push(result.data);
+          this.info("上传成功!");
+        } else {
+          this.error(result.msg);
+        }
+      });
+
+      return false;
+    },
+    // FIXME not worked
     beforeRemove(file, fileList) {
       return this.$confirm(`确定移除 ${file.name}？`);
     },

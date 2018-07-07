@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.List;
 
 import cn.xiaowenjie.common.utils.UserUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,20 +28,19 @@ import cn.xiaowenjie.daos.ConfigDao;
  * @author 肖文杰 https://github.com/xwjie/
  */
 @Service
+@Slf4j
 public class ConfigService {
-
-    private static final Logger logger = LoggerFactory.getLogger(ConfigService.class);
 
     @Autowired
     ConfigDao dao;
 
     public Collection<Config> getAll() {
         // 校验通过后打印重要的日志
-        logger.info("getAll start ...");
+        log.info("getAll start ...");
 
         List<Config> data = Lists.newArrayList(dao.findAll());
 
-        logger.info("getAll end, data size:" + data.size());
+        log.info("getAll end, data size:" + data.size());
 
         return data;
     }
@@ -52,7 +52,7 @@ public class ConfigService {
         notEmpty(config.getValue(), "value.is.null");
 
         // 校验通过后打印重要的日志
-        logger.info("add config:" + config);
+        log.info("add config:" + config);
 
         // 校验重复
         check(null == dao.findByName(config.getName()), "name.repeat");
@@ -60,11 +60,18 @@ public class ConfigService {
         config = dao.save(config);
 
         // 修改操作需要打印操作结果
-        logger.info("add config success, id:" + config.getId());
+        log.info("add config success, id:" + config.getId());
 
         return config.getId();
     }
 
+    /**
+     *  根据id删除配置项
+     *
+     *  管理员或者自己创建的才可以删除掉
+     * @param id
+     * @return
+     */
     public boolean delete(long id) {
 
         Config config = dao.findOne(id);
@@ -78,7 +85,7 @@ public class ConfigService {
         dao.delete(id);
 
         // 修改操作需要打印操作结果
-        logger.info("delete config success, id:" + id);
+        log.info("delete config success, id:" + id);
 
         return true;
     }
@@ -94,6 +101,13 @@ public class ConfigService {
         return UserUtil.getUser().equals(config.getCreator()) || UserUtil.isAdmin();
     }
 
+    /**
+     *  分页查找
+     *
+     * @param pageable
+     * @param keyword
+     * @return
+     */
     public PageResp<Config> listPage(Pageable pageable, String keyword) {
         if (StringUtils.isEmpty(keyword)) {
             return new PageResp<Config>(dao.findAll(pageable));
