@@ -12,6 +12,7 @@ import SimpleTreeWithIcon from './tree/SimpleTreeWithIcon';
 
 // uploadfile
 import UploadFile from './uploadfile/UploadFile';
+import UploadHistory from './uploadfile/UploadHistory';
 
 import Vue from 'vue';
 
@@ -31,6 +32,7 @@ function registerComponents(){
 
     // upload file
     Vue.component('UploadFile', UploadFile);
+    Vue.component('UploadHistory', UploadHistory);
 }
 
 export {

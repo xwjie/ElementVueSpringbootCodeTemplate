@@ -10,7 +10,7 @@
       :current-page="page"
       :page-sizes="[5, 10, 50, 100]"
       :page-size="pagesize"
-      layout="total, sizes, prev, pager, next, jumper"
+      :layout= "layout"
       :total="total">
     </el-pagination>  
 </template>
@@ -29,11 +29,11 @@ export default {
     sort: {
       type: Object,
       required: false,
-      default: function(){
+      default: function() {
         return {};
       }
     },
-    pageSize:{
+    pageSize: {
       type: Number,
       required: false,
       default: 10
@@ -42,6 +42,18 @@ export default {
       type: String,
       required: false,
       default: ""
+    },
+    // 紧凑型
+    small: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    // 刷新回调事件，参数为rows
+    refreshDone:{
+      type: Function,
+      required:false,
+      default: null
     }
   },
   mounted() {
@@ -74,6 +86,9 @@ export default {
             this.total = result.data.total;
 
             this.$emit("input", result.data.rows);
+
+            // 回调
+            this.refreshDone && this.refreshDone(result.data.rows);
           } else {
             this.error(result.msg);
           }
@@ -93,6 +108,11 @@ export default {
     },
     keyword(val) {
       this.reload();
+    }
+  },
+  computed:{
+    layout(){
+      return this.small ? 'total, prev, pager, next' : 'total, sizes, prev, pager, next, jumper';
     }
   }
 };

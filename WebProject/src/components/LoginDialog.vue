@@ -1,6 +1,6 @@
 <template>
 
-<el-dialog title="请登录" :visible.sync="show">
+<el-dialog title="请登录" :visible.sync="show2" @close="cancelLogin">
   <el-form :model="form">
     <el-form-item label="用户名" :label-width="formLabelWidth">
       <el-input v-model="form.username" auto-complete="off"></el-input>
@@ -19,38 +19,45 @@
 
 <script>
 export default {
-    props: ['show'],
-    data() {
-        return {
-            form: {
-                username: 'xwjie',
-                password: '晓风轻'
-            },
-            formLabelWidth: '120px',
-        };
-    },
-    methods: {
-        doLogin() {
-            console.log('login: ', this.form);
+  props: ["show"],
+  data() {
+    return {
+      form: {
+        username: "xwjie",
+        password: "晓风轻"
+      },
+      formLabelWidth: "120px"
+    };
+  },
+  computed: {
+    show2: {
+      get: function() {
+        return this.show;
+      },
+      set: function(v) {
+        //do nothing
+      }
+    }
+  },
+  methods: {
+    doLogin() {
+      console.log("login: ", this.form);
 
-            let self = this;
-            //
-            this.ajax.postForm('/app/login', this.form).then(result => {
-                if (result.code == 0) {
-                    // 发送登录成功消息
-                    self.$bus.emit('login-success', result.data);
-                }
-                else {
-                    self.error(result.msg);
-                }
-            });
-
-
-        },
-        cancelLogin() {
-            // 发送登录取消消息
-            this.$bus.emit('login-cancel');
+      let self = this;
+      //
+      this.ajax.postForm("/app/login", this.form).then(result => {
+        if (result.code == 0) {
+          // 发送登录成功消息
+          self.$bus.emit("login-success", result.data);
+        } else {
+          self.error(result.msg);
         }
+      });
     },
+    cancelLogin() {
+      // 发送登录取消消息
+      this.$bus.emit("login-cancel");
+    }
+  }
 };
 </script>

@@ -14,6 +14,7 @@
     <el-table
       :data="configs"
       border
+      size = "mini"
       stripe
       @sort-change="sortChange"
       style="width: 100%">

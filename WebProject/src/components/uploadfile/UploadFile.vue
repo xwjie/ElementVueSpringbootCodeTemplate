@@ -7,7 +7,7 @@
         class="upload-demo"
         ref="upload"
         :multiple="true"
-        action="/logparse/upload"
+        action="/upload/"
         :on-preview="handlePreview"
         :on-remove="handleRemove"
         :before-remove="beforeRemove"
@@ -25,7 +25,12 @@
         <el-upload
             class="upload-demo"
             drag
-            action="/logparse/upload"
+            action="/upload/"
+            :on-preview="handlePreview"
+            :on-remove="handleRemove"
+            :before-remove="beforeRemove"
+            :file-list="fileList"
+            :before-upload="beforeUpload"
             multiple>
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
@@ -72,7 +77,7 @@ export default {
       };
 
       // 添加请求头
-      this.ajax.post("/logparse/upload", param, config).then(result => {
+      this.ajax.post("/upload/", param, config).then(result => {
         if (result.code == 0) {
           this.fileList.push(result.data);
           this.info("上传成功!");

@@ -13,6 +13,7 @@
     <p/>
     <el-table
       :data="configs"
+      size = "mini"
       border
       stripe
       @sort-change="sortChange"

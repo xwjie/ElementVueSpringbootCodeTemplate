@@ -20,5 +20,13 @@ public class UploadRecord extends BaseEntity {
 
     private String realPath;
 
+    /**
+     * 文件大小
+     */
     private long size;
+
+    /**
+     *  文件包含的数据量
+     */
+    private  int dataCount;
 }

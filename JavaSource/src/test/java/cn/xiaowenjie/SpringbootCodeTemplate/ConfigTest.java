@@ -180,4 +180,18 @@ public class ConfigTest {
     }
   }
 
+  @Test
+  public void test7_deleteConfig() {
+    System.out.println("\n\n---deleteConfig---\n\n");
+
+    User user = userDao.findByName(userName);
+
+    // 设置当前登陆用户
+    UserUtil.setUser(user);
+
+    Config config = configService.getByName("测试数据：" + randomNum);
+    assertTrue(config != null);
+    assertTrue(configService.delete(config.getId()));
+  }
+
 }

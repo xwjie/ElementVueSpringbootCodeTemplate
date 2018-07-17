@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import UI from 'element-ui'
+
+
 import VueRouter from 'vue-router';
 import Routers from './router';
 import Vuex from 'vuex';
@@ -10,19 +11,30 @@ import store from './stores';
 
 //
 import VueI18n from 'vue-i18n';
+Vue.use(VueI18n);
 
 import enLocale from 'element-ui/lib/locale/lang/en'
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
+// 切换语言使用
+import locale from 'element-ui/lib/locale'
 
-Vue.use(VueI18n)
-Vue.use(UI)
+import UI from 'element-ui'
 
+Vue.use(UI,{ enLocale, zhLocale})
+
+// 多语言配置
+Vue.locale('zh', zhLocale)
+Vue.locale('en', enLocale)
 Vue.config.lang = 'zh-cn'
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
-Vue.use(VueI18n);
+
+
+// charts
+import VCharts from 'v-charts';
+Vue.use(VCharts)
 
 // 工具类
 Vue.prototype.info = function (msg) {
@@ -64,16 +76,28 @@ import VueBus from 'vue-bus';
 Vue.use(VueBus);
 
 // 自动设置语言
-const navLang = navigator.language;
-const localLang = (navLang === 'zh-CN' || navLang === 'en-US') ? navLang : false;
-const lang = window.localStorage.getItem('language') || localLang || 'zh-CN';
+function switchLanguage(value){
+    var lang = value;
 
-Vue.config.lang = lang;
+    if(lang){
+        setCookie('lang', value);
+    }
+    else{
+        const navLang = navigator.language;
+        const localLang = (navLang === 'zh-CN' || navLang === 'en-US') ? navLang : false;
+        //const lang = window.localStorage.getItem('language') || localLang || 'zh-CN';
+        lang = getCookie('lang') || localLang || 'zh-CN';        
+    }
 
-Vue.locale('zh-cn', zhLocale)
-Vue.locale('en', enLocale)
+    Vue.config.lang = lang;
 
-// 多语言配置
+    console.log("language", lang);
+    locale.use(lang);    
+}
+
+
+switchLanguage();
+
 
 // 路由配置
 const RouterConfig = {
@@ -113,9 +137,46 @@ const store = new Vuex.Store({
 */
 
 
-new Vue({
+var instance = new Vue({
     el: '#app',
     router: router,
     store: store,
     render: h => h(App)
 });
+
+
+instance.$bus.on("lang-change", switchLanguage);
+
+// 对Date的扩展，将 Date 转化为指定格式的String
+// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
+// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) 
+// 例子： 
+// (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423 
+// (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18 
+Date.prototype.format = function (fmt) { //author: meizz 
+    var o = {
+        "M+": this.getMonth() + 1, //月份 
+        "d+": this.getDate(), //日 
+        "h+": this.getHours(), //小时 
+        "m+": this.getMinutes(), //分 
+        "s+": this.getSeconds(), //秒 
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+        "S": this.getMilliseconds() //毫秒 
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+
+function getCookie(name) {
+    var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+    if (arr = document.cookie.match(reg))
+        return (arr[2]);
+    else
+        return null;
+}
+
+function setCookie(name, value) {
+    document.cookie = name + '=' + value;
+}

@@ -116,4 +116,9 @@ public class ConfigService {
             return new PageResp<>(dao.findAllByKeyword(keyword, pageable));
         }
     }
+
+    public Config getByName(String name) {
+        return dao.findByName(name);
+    }
+
 }
