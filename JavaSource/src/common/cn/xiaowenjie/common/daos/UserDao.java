@@ -1,8 +1,8 @@
-package cn.xiaowenjie.daos;
+package cn.xiaowenjie.common.daos;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import cn.xiaowenjie.beans.User;
+import cn.xiaowenjie.common.rbac.User;
 
 /**
  * 用户DAO

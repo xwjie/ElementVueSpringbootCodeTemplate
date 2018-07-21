@@ -18,11 +18,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import cn.xiaowenjie.SpringbootCodeTemplateApplication;
 import cn.xiaowenjie.beans.Config;
-import cn.xiaowenjie.beans.User;
+import cn.xiaowenjie.common.rbac.User;
 import cn.xiaowenjie.common.consts.Roles;
 import cn.xiaowenjie.common.exceptions.CheckException;
 import cn.xiaowenjie.common.utils.UserUtil;
-import cn.xiaowenjie.daos.UserDao;
+import cn.xiaowenjie.common.daos.UserDao;
 import cn.xiaowenjie.services.ConfigService;
 
 @RunWith(SpringRunner.class)
@@ -61,7 +61,8 @@ public class ConfigTest {
 
       user.setName(userName);
       user.setNick("测试用户");
-      user.setRole(Roles.USER);
+
+      // user.setRole(Roles.USER);
 
       user = userDao.save(user);
 

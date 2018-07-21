@@ -7,8 +7,10 @@ import static cn.xiaowenjie.common.utils.CheckUtil.notNull;
 import java.util.Collection;
 import java.util.List;
 
+import cn.xiaowenjie.common.consts.Roles;
 import cn.xiaowenjie.common.utils.UserUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +47,12 @@ public class ConfigService {
         return data;
     }
 
+    /**
+     *  增加配置，需要管理员权限
+     * @param config
+     * @return
+     */
+    @RequiresRoles(Roles.ADMIN)
     public long add(Config config) {
         // 参数校验
         notNull(config, "param.is.null");

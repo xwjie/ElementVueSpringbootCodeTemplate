@@ -1,6 +1,6 @@
 package cn.xiaowenjie.common.filters;
 
-import cn.xiaowenjie.beans.User;
+import cn.xiaowenjie.common.rbac.User;
 import cn.xiaowenjie.common.utils.UserUtil;
 import cn.xiaowenjie.services.UserService;
 

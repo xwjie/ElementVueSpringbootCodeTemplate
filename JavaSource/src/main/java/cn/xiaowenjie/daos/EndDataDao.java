@@ -1,6 +1,5 @@
 package cn.xiaowenjie.daos;
 
-import cn.xiaowenjie.beans.User;
 import cn.xiaowenjie.tool.EndData;
 import org.springframework.data.repository.PagingAndSortingRepository;
 

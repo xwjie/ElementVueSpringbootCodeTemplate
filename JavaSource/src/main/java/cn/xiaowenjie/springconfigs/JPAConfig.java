@@ -1,6 +1,6 @@
 package cn.xiaowenjie.springconfigs;
 
-import cn.xiaowenjie.beans.User;
+import cn.xiaowenjie.common.rbac.User;
 import cn.xiaowenjie.common.utils.UserUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

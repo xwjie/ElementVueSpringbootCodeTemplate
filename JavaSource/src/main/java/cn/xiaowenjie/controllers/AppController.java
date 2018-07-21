@@ -2,6 +2,8 @@ package cn.xiaowenjie.controllers;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.xiaowenjie.beans.User;
+import cn.xiaowenjie.common.rbac.User;
 import cn.xiaowenjie.common.beans.ResultBean;
 import cn.xiaowenjie.common.utils.UserUtil;
 import cn.xiaowenjie.services.UserService;
@@ -49,7 +51,9 @@ public class AppController {
 
     @PostMapping(value = "/logout")
     public ResultBean<Boolean> logout(HttpSession session) {
-        session.invalidate();
+        //session.invalidate();
+        userService.logout();
+
         return new ResultBean<Boolean>(true);
     }
 }

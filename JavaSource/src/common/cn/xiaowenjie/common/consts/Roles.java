@@ -2,7 +2,7 @@ package cn.xiaowenjie.common.consts;
 
 public interface Roles {
 
-	String ADMIN = "admin";
+	String  ADMIN = "admin";
 
-	String USER = "user";
+	String NORMAL_USER = "user";
 }

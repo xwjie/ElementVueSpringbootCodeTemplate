@@ -6,13 +6,14 @@
       <el-input v-model="form.username" auto-complete="off"></el-input>
     </el-form-item>
     <el-form-item label="密码" :label-width="formLabelWidth">
-      <el-input v-model="form.password" auto-complete="off"></el-input>
+      <el-input v-model="form.password" type="password" auto-complete="off"></el-input>
     </el-form-item>
   </el-form>
   <div slot="footer" class="dialog-footer">
     <el-button @click="cancelLogin">取 消</el-button>
     <el-button type="primary" @click="doLogin">确 定</el-button>
   </div>
+  <h3>管理员：xwjie，普通用户：user1~user10，密码默认都是 123456</h3>
 </el-dialog>
  
 </template>
@@ -24,7 +25,7 @@ export default {
     return {
       form: {
         username: "xwjie",
-        password: "晓风轻"
+        password: "123456"
       },
       formLabelWidth: "120px"
     };
