@@ -38,7 +38,6 @@
         width="200">
       </el-table-column>
       <el-table-column
-        sortable
         prop="roles"
         label="角色">
         <template scope="scope">
@@ -133,7 +132,8 @@ export default {
         return;
       }
 
-      this.ajax.post("/user/updatepwd/" + this.passwordDlg.row.id,{
+      this.ajax.postForm("/user/updatepwd" ,{
+        id: this.passwordDlg.row.id,
         password: this.passwordDlg.form.password
       }).then(result => {
         if (result.code == 0) {

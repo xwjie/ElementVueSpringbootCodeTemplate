@@ -47,8 +47,9 @@ public class UserController {
      * @param password
      * @return
      */
-	@PostMapping("updatepwd/{id}")
-    public  ResultBean<Boolean> updatePwd(@PathVariable("id") long id, @RequestBody String password){
+	@PostMapping("updatepwd")
+    public  ResultBean<Boolean> updatePwd(long id, String password){
+        System.out.println(userService.getClass());//FIXME DELETE
 	    userService.updatePwd(id, password.trim());
 	    return new ResultBean<>(true);
     }

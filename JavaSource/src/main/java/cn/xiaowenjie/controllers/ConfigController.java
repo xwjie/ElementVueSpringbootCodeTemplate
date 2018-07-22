@@ -52,6 +52,7 @@ public class ConfigController {
 	 */
 	@PostMapping("/add")
 	public ResultBean<Long> add(@RequestBody Config config) {
+		System.out.println(configService.getClass());
 		return new ResultBean<Long>(configService.add(config));
 	}
 

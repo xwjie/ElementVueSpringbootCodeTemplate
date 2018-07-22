@@ -80,7 +80,8 @@ public class UserService {
         check(user != null , "id.error", id);
         check(checkPwd(password), "password.invalid");
 
-        log.info("modify password, user id: " + id);
+        // FIXME
+        log.info("modify password, user id: " + id + ", password:" + password);
 
         // 生成新密码
         String hash = ShiroConfig.renewPassword(password, user.getSalt());
@@ -92,6 +93,6 @@ public class UserService {
 
     //TODO
     private boolean checkPwd(String password) {
-	    return password.length() > 0;
+	    return password.length() >= 3;
     }
 }
