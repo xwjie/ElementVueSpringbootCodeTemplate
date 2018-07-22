@@ -14,6 +14,9 @@ import SimpleTreeWithIcon from './tree/SimpleTreeWithIcon';
 import UploadFile from './uploadfile/UploadFile';
 import UploadHistory from './uploadfile/UploadHistory';
 
+// 
+import UserTable from './table/UserTable';
+
 import Vue from 'vue';
 
 function registerComponents(){
@@ -33,6 +36,10 @@ function registerComponents(){
     // upload file
     Vue.component('UploadFile', UploadFile);
     Vue.component('UploadHistory', UploadHistory);
+
+    // User
+    Vue.component('UserTable', UserTable);
+    
 }
 
 export {

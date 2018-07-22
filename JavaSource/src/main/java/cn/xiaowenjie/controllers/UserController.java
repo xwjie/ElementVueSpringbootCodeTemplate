@@ -3,11 +3,11 @@ package cn.xiaowenjie.controllers;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import cn.xiaowenjie.common.beans.PageReq;
+import cn.xiaowenjie.common.beans.PageResp;
+import cn.xiaowenjie.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import cn.xiaowenjie.common.rbac.User;
 import cn.xiaowenjie.common.beans.ResultBean;
@@ -17,6 +17,9 @@ import cn.xiaowenjie.common.consts.Roles;
 @CrossOrigin
 @RequestMapping("/user")
 public class UserController {
+
+	@Autowired
+	UserService userService;
 
 	/**
 	 * 测试数据
@@ -33,4 +36,20 @@ public class UserController {
 		return new ResultBean<>(nodes);
 	}
 
+	@GetMapping("/list")
+	public ResultBean<PageResp<User>> list(PageReq page){
+		return new ResultBean<>(userService.list(page.toPageable(), page.getKeyword()));
+	}
+
+    /**
+     *  修改密码
+     * @param id
+     * @param password
+     * @return
+     */
+	@PostMapping("updatepwd/{id}")
+    public  ResultBean<Boolean> updatePwd(@PathVariable("id") long id, @RequestBody String password){
+	    userService.updatePwd(id, password.trim());
+	    return new ResultBean<>(true);
+    }
 }

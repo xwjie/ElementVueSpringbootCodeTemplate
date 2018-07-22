@@ -80,6 +80,7 @@ public class ConfigService {
      * @param id
      * @return
      */
+    @RequiresRoles(Roles.ADMIN)
     public boolean delete(long id) {
 
         Config config = dao.findOne(id);

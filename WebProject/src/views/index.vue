@@ -68,6 +68,7 @@
           </template>
           <el-menu-item-group>
             <el-menu-item index="9-1" @click="addTab('系统配置', 'ConfigTable2')">系统配置</el-menu-item>
+            <el-menu-item index="9-2" @click="addTab('用户管理', 'UserTable')">用户管理</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 
