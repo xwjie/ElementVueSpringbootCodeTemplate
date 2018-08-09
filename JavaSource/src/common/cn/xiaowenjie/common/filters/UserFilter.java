@@ -20,8 +20,6 @@ import java.io.IOException;
 @WebFilter(filterName = "userFilter", urlPatterns = "/*")
 public class UserFilter implements Filter {
 
-	private static UserService userService;
-
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 
@@ -94,7 +92,4 @@ public class UserFilter implements Filter {
 
 	}
 
-	public static void setUserService(UserService userService) {
-		UserFilter.userService = userService;
-	}
 }

@@ -25,17 +25,12 @@ public class StaticFieldInjectionConfiguration {
 	MessageSource resources;
 
 	@Autowired
-	UserService userService;
-
-	@Autowired
 	ConfigDao configDao;
 
 	@PostConstruct
 	private void init() {
 		System.out.println("\n\n-----StaticFieldInjectionConfiguration----\n\n");
 		CheckUtil.setResources(resources);
-		UserFilter.setUserService(userService);
-
 		ConfigUtil.setConfigDao(configDao);
 	}
 }

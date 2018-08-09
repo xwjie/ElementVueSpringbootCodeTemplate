@@ -105,14 +105,14 @@ export default {
       return new Date(date).format("yyyy/MM/dd hh:mm");
     },
     deleteConfig(row) {
-      this.ajax.post("/config/delete?id=" + row.id).then(result => {
-        if (result.code == 0) {
-          this.info("delete success");
-          this.refreshConfig();
-        } else {
-          this.error(result.msg);
-        }
-      });
+      // this.ajax.post("/config/delete?id=" + row.id).then(result => {
+      //   if (result.code == 0) {
+      //     this.info("delete success");
+      //     this.refreshConfig();
+      //   } else {
+      //     this.error(result.msg);
+      //   }
+      // });
     },
     // 显示修改密码 
     showPasswordDlg(row){

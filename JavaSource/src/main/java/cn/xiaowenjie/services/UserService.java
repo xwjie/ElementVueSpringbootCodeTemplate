@@ -46,6 +46,7 @@ public class UserService {
 		UsernamePasswordToken token = new UsernamePasswordToken(username, password);
 		subject.login(token);
 
+		// 登陆成功，取出用户
 		User user = (User) subject.getPrincipal();
 
 		return user;

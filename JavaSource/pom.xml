@@ -133,6 +133,13 @@
 			<version>1.4.0</version>
 		</dependency>
 
+		<!-- druid , 注意 artifactId，否则SQL监控里面没有数据-->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.10</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -17,9 +17,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class  MyAuthorizingRealm extends AuthorizingRealm {
+public class MyAuthorizingRealm extends AuthorizingRealm {
 
-    private final static Logger logger=LoggerFactory.getLogger(MyAuthorizingRealm.class);
+    private final static Logger logger = LoggerFactory.getLogger(MyAuthorizingRealm.class);
 
     @Autowired
     private UserService userService;
@@ -31,11 +31,11 @@ public class  MyAuthorizingRealm extends AuthorizingRealm {
         logger.info("权限配置-->doGetAuthorizationInfo");
 
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        logger.info("----------------------------->"+principals.getPrimaryPrincipal());
+        logger.info("----------------------------->" + principals.getPrimaryPrincipal());
 
-        User user=(User) principals.getPrimaryPrincipal();
+        User user = (User) principals.getPrimaryPrincipal();
 
-        for(Role role:user.getRoles()){
+        for (Role role : user.getRoles()) {
 
             authorizationInfo.addRole(role.getName());
 
@@ -43,8 +43,8 @@ public class  MyAuthorizingRealm extends AuthorizingRealm {
             // authorizationInfo.addStringPermission()
         }
 
-        logger.info("用户"+user.getName()+"具有的角色:"+authorizationInfo.getRoles());
-        logger.info("用户"+user.getName()+"具有的权限："+authorizationInfo.getStringPermissions());
+        logger.info("用户" + user.getName() + "具有的角色:" + authorizationInfo.getRoles());
+        logger.info("用户" + user.getName() + "具有的权限：" + authorizationInfo.getStringPermissions());
 
         return authorizationInfo;
     }
@@ -54,18 +54,18 @@ public class  MyAuthorizingRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 
         logger.info("正在验证身份...");
-        SimpleAuthenticationInfo info=null;
+        SimpleAuthenticationInfo info = null;
 
         //将token转换成UsernamePasswordToken
         UsernamePasswordToken upToken = (UsernamePasswordToken) token;
         //从转换后的token中获取用户名
-        String username= upToken.getUsername();
-        logger.info("----->"+username);
+        String username = upToken.getUsername();
+        logger.info("----->" + username);
 
         //查询数据库，得到用户
-        User user=userService.findUser(username);
+        User user = userService.findUser(username);
 
-        if(user==null){
+        if (user == null) {
             return null;
         }
 
