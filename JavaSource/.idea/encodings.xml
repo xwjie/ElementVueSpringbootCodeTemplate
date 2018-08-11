@@ -2,7 +2,10 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/blog" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chart" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chart/blog" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/favorite" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/main" charset="UTF-8" />

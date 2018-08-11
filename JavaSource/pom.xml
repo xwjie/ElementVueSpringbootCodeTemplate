@@ -13,6 +13,8 @@
         <module>core</module>
         <module>favorite</module>
         <module>main</module>
+        <module>chart</module>
+        <module>blog</module>
     </modules>
 
     <parent>
