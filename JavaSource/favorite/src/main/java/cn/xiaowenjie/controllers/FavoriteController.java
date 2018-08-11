@@ -45,7 +45,7 @@ public class FavoriteController {
 	}
 
 	@PostMapping("/delete")
-	public ResultBean<Boolean> delete(long id) {
+	public ResultBean<Boolean> delete(@RequestParam long id) {
 		return new ResultBean<Boolean>(favoriteService.delete(id));
 	}
 }
