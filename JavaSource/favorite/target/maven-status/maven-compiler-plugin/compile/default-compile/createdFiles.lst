@@ -1,0 +1,5 @@
+cn\xiaowenjie\daos\FavoriteDao.class
+cn\xiaowenjie\FavoriteModule.class
+cn\xiaowenjie\beans\Favorite.class
+cn\xiaowenjie\services\FavoriteService.class
+cn\xiaowenjie\controllers\FavoriteController.class

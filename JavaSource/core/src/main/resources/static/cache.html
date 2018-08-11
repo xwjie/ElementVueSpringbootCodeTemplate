@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cache Index</title>
+</head>
+<body>
+	<h3>
+		Cache Names
+		<button onclick="clearAll()">Clear All Caches</button>
+	</h3>
+	<div id="caches"></div>
+	<script id="template1" type="text/html">
+<div>
+    <%if(list.length>0) { %>
+        <ul>
+            <!-- 循环语句 for-->
+            <%for(var i=0; i < list.length; i++){%>
+                <li><%=list[i]%> <a href="###" onclick="javascirpt:clearData('<%=list[i]%>')">Clear<a/></li>
+            <%}%>
+        </ul>
+    <%}else{%>
+        <h3>No Data.</h3>   
+    <%}%>
+</div>  
+	</script>
+	<script src="resources/lib/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		function showError(s) {
+			alert(s);
+		}
+
+		function clearData(name) {
+			$.post('cache/clear', {
+				name : name
+			}, function(result) {
+				alert('clear cache success.');
+				handlerResult(result, fetchAllNames);
+			});
+		}
+
+		function clearAll() {
+			$.post('cache/clearAll', function(result) {
+				alert('clear all cache success.');
+				handlerResult(result, fetchAllNames);
+			});
+		}
+
+		function handlerResult(result, fn) {
+			// 成功执行操作，失败提示原因
+			if (result.code == 0) {
+				fn(result.data);
+			} else if (result.code == -1) {
+				showError("没有登录");
+			} else {
+				showError(result.msg);
+			}
+		}
+
+		function fetchAllNames() {
+			$.getJSON('cache/names', function(result) {
+				handlerResult(result, renderData);
+			});
+		}
+
+		function renderData(data) {
+			var html = baidu.template('template1', {
+				list : data
+			});
+			document.getElementById('caches').innerHTML = html;
+		}
+
+		$(document).ready(function() {
+			fetchAllNames();
+		});
+	</script>
+	<script src="resources/lib/baiduTemplate.js"></script>
+
+</body>
+</html>

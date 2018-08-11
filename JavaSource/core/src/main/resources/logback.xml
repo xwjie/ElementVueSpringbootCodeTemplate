@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+
+	<property name="appname" value="xfqcodetemplate" />
+
+	<!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+	<property name="LOG_HOME" value="/xfqcodetemplate" />
+
+	<!-- 按照每天生成日志文件 -->
+	<appender name="file"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!--日志文件输出的文件名 -->
+			<FileNamePattern>${LOG_HOME}/${appname}.log.%d{yyyy-MM-dd}.log
+			</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{user}] [%thread] %-5level %logger{50} -%msg%n
+			</pattern>
+		</layout>
+		<!--日志文件最大的大小 -->
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>10MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+
+	<!-- To enable JMX Management -->
+	<jmxConfigurator />
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%X{user}] [%thread] %-5level %logger{36} -%msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="org.hibernate" level="error" />
+	<logger name="cn.xiaowenjie" level="debug">
+		<!-- wenjie delete <appender-ref ref="file" /> <appender-ref ref="console" 
+			/> -->
+	</logger>
+
+	<!-- 定义错误邮件发送 -->
+	<property name="smtpHost" value="smtp.qq.com" />
+	<property name="smtpPort" value="25" />
+	<property name="username" value="121509092@qq.com" />
+	<property name="password" value="notnull" />
+	<property name="SSL" value="false" />
+	<property name="email_to" value="121509092@qq.com" />
+	<property name="email_from" value="121509092@qq.com" />
+	<property name="email_subject" value="${USERNAME}【Error】: %logger" />
+
+	<appender name="EMAIL" class="ch.qos.logback.classic.net.SMTPAppender">
+		<smtpHost>${smtpHost}</smtpHost>
+		<smtpPort>${smtpPort}</smtpPort>
+		<username>${username}</username>
+		<password>${password}</password>
+		<SSL>${SSL}</SSL>
+		<asynchronousSending>true</asynchronousSending>
+		<to>${email_to}</to>
+		<from>${email_from}</from>
+		<subject>${email_subject}</subject>
+		<layout class="ch.qos.logback.classic.html.HTMLLayout">
+			<pattern>%date%level%thread%logger{0}%line%message</pattern>
+		</layout>
+	</appender>
+
+	<root level="info">
+		<!-- 
+		<appender-ref ref="file" />
+		 -->
+		<appender-ref ref="console" />
+		<appender-ref ref="EMAIL" />
+	</root>
+</configuration>
