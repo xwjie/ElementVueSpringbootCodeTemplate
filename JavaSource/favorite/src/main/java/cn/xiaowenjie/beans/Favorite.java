@@ -20,7 +20,7 @@ public class Favorite extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	private int userId;
+	private long userId;
 
 	private int objType;
 

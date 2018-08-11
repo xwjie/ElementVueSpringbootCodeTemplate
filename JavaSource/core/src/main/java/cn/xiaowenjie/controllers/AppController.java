@@ -7,10 +7,7 @@ import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cn.xiaowenjie.common.rbac.User;
 import cn.xiaowenjie.common.beans.ResultBean;
@@ -32,11 +29,12 @@ public class AppController {
     UserService userService;
 
     @PostMapping(value = "/login")
-    public ResultBean<User> login(HttpSession session, String username, String
+    public ResultBean<User> login(HttpSession session, @RequestParam String username, @RequestParam String
             password) {
         logger.info("login user:" + username);
 
         User user = userService.login(username, password);
+
         //FIXME
         session.setAttribute(UserUtil.KEY_USER, user);
 

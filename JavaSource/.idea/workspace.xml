@@ -2,104 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbb20273-986a-48ca-a724-e0efd05d7360" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/chartbeans/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/chartbeans/Entry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/chartbeans/LineBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/chartbeans/LineBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/ChartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/controllers/ChartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/controllers/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/daos/EndDataDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/daos/EndDataDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/daos/UploadRecordDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/daos/UploadRecordDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/services/ChartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/services/ChartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/services/UploadFileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/services/UploadFileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/tool/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/tool/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/tool/EndData.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/chartbeans/EndData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/tool/ReadLog2CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/tool/ReadLog2CSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/CreateTestData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/beans/BaseEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/beans/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/beans/TreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/beans/UploadRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/caches/CacheNames.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/caches/ClearCacheTask.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/chartbeans/Entry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/chartbeans/LineBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/aop/ControllerAOP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/beans/PageReq.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/beans/PageResp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/beans/ResultBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/consts/Roles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/daos/RoleDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/daos/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/exceptions/CheckException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/exceptions/UnloginException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/filters/UserFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/rbac/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/rbac/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/utils/CheckUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/utils/StaticFieldInjectionConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/utils/UserUtil$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/common/utils/UserUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/controllers/AppController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/controllers/CacheController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/controllers/ChartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/controllers/ConfigController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/controllers/MailControlller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/controllers/TreeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/controllers/UploadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/controllers/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/daos/ConfigDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/daos/EndDataDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/daos/UploadRecordDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/jms/JMSMailComsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/jms/JMSTool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/jms/JMSType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/services/ChartService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/services/ConfigService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/services/UploadFileService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/tool/ConfigUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/tool/Data.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/tool/EndData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/tool/MailTool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/tool/PasswordUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/tool/ReadLog2CSV.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/cn/xiaowenjie/tool/XWJDate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/i18n/messages_en.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/i18n/messages_zh_CN.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/static/cache.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/static/resources/lib/baiduTemplate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/classes/static/resources/lib/jquery-1.11.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite/target/classes/cn/xiaowenjie/FavoriteModule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite/target/classes/cn/xiaowenjie/beans/Favorite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite/target/classes/cn/xiaowenjie/controllers/FavoriteController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite/target/classes/cn/xiaowenjie/daos/FavoriteDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite/target/classes/cn/xiaowenjie/services/FavoriteService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/SpringbootCodeTemplate/ConfigTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/SpringbootCodeTemplate/MailTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/SpringbootCodeTemplateApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/springconfigs/DruidStatFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/springconfigs/DruidStatViewServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/springconfigs/JMSConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/springconfigs/JPAConfig$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/springconfigs/JPAConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/springconfigs/MyAuthorizingRealm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/springconfigs/RedisConfig$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/springconfigs/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/classes/cn/xiaowenjie/springconfigs/ShiroConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/utils/CheckUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/utils/CheckUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/resources/i18n/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/i18n/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/resources/i18n/messages_zh_CN.properties" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/resources/i18n/messages_zh_CN.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java" beforeDir="false" afterPath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/controllers/FavoriteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/controllers/FavoriteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/daos/FavoriteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/daos/FavoriteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/services/FavoriteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/services/FavoriteService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -166,26 +78,32 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="81" />
+          <entry key="java" value="92" />
+          <entry key="messages" value="1" />
+          <entry key="properties" value="2" />
           <entry key="xml" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="81" />
+          <entry key="JAVA" value="92" />
+          <entry key="Properties" value="2" />
+          <entry key="ResourceBundle" value="1" />
           <entry key="XML" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="217" />
+          <entry key="java" value="498" />
+          <entry key="properties" value="55" />
           <entry key="xml" value="95" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="217" />
+          <entry key="JAVA" value="498" />
+          <entry key="Properties" value="55" />
           <entry key="XML" value="95" />
         </counts>
       </usages-collector>
@@ -194,98 +112,101 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chart/pom.xml">
+        <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+            <state relative-caret-position="324">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/caches/CacheNames.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/consts/ObjType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/controllers/FavoriteController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="783">
+              <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+              <folding>
+                <element signature="e#1410#1411#0" expanded="true" />
+                <element signature="e#1473#1474#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/beans/Blog.java">
+        <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/services/FavoriteService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="204">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/favorite/pom.xml">
+        <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/daos/FavoriteDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="90">
+              <caret line="17" column="66" lean-forward="true" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/pom.xml">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/utils/UserUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/services/BlogService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="123" column="24" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="24" />
+            <state relative-caret-position="166">
+              <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2845#2846#0" expanded="true" />
-                <element signature="e#2890#2891#0" expanded="true" />
+                <element signature="e#1299#1300#0" expanded="true" />
+                <element signature="e#1339#1340#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/daos/BlogDao.java">
+        <entry file="file://$PROJECT_DIR$/core/src/main/resources/i18n/messages_en.properties">
+          <provider editor-type-id="ResourceBundle" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+            <state relative-caret-position="27">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/core/src/main/resources/i18n/messages_zh_CN.properties">
+          <provider editor-type-id="ResourceBundle" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-243" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/controllers/BlogController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-              <folding>
-                <element signature="e#679#680#0" expanded="true" />
-                <element signature="e#749#750#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="27">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blog/pom.xml">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/utils/CheckUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/beans/Config.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="23" selection-start-line="23" selection-end-line="28" selection-end-column="25" />
+            <state relative-caret-position="339">
+              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -296,16 +217,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>Favorite</find>
+      <find>Config</find>
       <find>config</find>
     </findStrings>
     <replaceStrings>
       <replace>Dao</replace>
       <replace>blog</replace>
+      <replace>Favorite</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -326,7 +251,6 @@
         <option value="$PROJECT_DIR$/core/src/test/java/cn/xiaowenjie/SpringbootCodeTemplate/MailTest.java" />
         <option value="$PROJECT_DIR$/main/src/main/java/cn/xiaowenjie/SpringbootCodeTemplate/MailTest.java" />
         <option value="$PROJECT_DIR$/favorite/pom.xml" />
-        <option value="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/controllers/FavoriteController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/chartbeans/Entry.java" />
         <option value="$PROJECT_DIR$/main/src/main/java/cn/xiaowenjie/SpringbootCodeTemplateApplication.java" />
@@ -350,6 +274,15 @@
         <option value="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/daos/BlogDao.java" />
         <option value="$PROJECT_DIR$/main/pom.xml" />
         <option value="$PROJECT_DIR$/chart/pom.xml" />
+        <option value="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/AppController.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/consts/ObjType.java" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/i18n/messages_en.properties" />
+        <option value="$PROJECT_DIR$/core/src/main/resources/i18n/messages_zh_CN.properties" />
+        <option value="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/utils/CheckUtil.java" />
+        <option value="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/daos/FavoriteDao.java" />
+        <option value="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/controllers/FavoriteController.java" />
+        <option value="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java" />
+        <option value="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/services/FavoriteService.java" />
       </list>
     </option>
   </component>
@@ -382,7 +315,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="251" />
     <option name="y" value="36" />
     <option name="width" value="1346" />
@@ -408,18 +341,13 @@
             <path>
               <item name="JavaSource" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaSource" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaSource" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaSource" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="favorite" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaSource" type="b2602c69:ProjectViewProjectNode" />
               <item name="JavaSource" type="462c0819:PsiDirectoryNode" />
               <item name="favorite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -431,51 +359,73 @@
           <expand>
             <path>
               <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
-              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="core" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
               <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
-              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="core" type="616d4139:PackageViewModuleNode" />
               <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
-              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="core" type="616d4139:PackageViewModuleNode" />
+              <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
+              <item name="common" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="core" type="616d4139:PackageViewModuleNode" />
+              <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
+              <item name="common" type="1f31426a:PackageElementNode" />
+              <item name="utils" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="core" type="616d4139:PackageViewModuleNode" />
+              <item name="i18n" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="core" type="616d4139:PackageViewModuleNode" />
+              <item name="i18n" type="1f31426a:PackageElementNode" />
+              <item name="Resource Bundle 'messages'" type="a6c14932:ResourceBundleNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="favorite" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="favorite" type="616d4139:PackageViewModuleNode" />
+              <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="favorite" type="616d4139:PackageViewModuleNode" />
               <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
               <item name="beans" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
-              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="favorite" type="616d4139:PackageViewModuleNode" />
               <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
               <item name="controllers" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
-              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="favorite" type="616d4139:PackageViewModuleNode" />
               <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
               <item name="daos" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
-              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="favorite" type="616d4139:PackageViewModuleNode" />
               <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
               <item name="services" type="1f31426a:PackageElementNode" />
             </path>
             <path>
               <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
-              <item name="core" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
-              <item name="core" type="616d4139:PackageViewModuleNode" />
-              <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
-              <item name="core" type="616d4139:PackageViewModuleNode" />
-              <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
-              <item name="beans" type="1f31426a:PackageElementNode" />
+              <item name="main" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -490,9 +440,10 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="MyAuthorizingRealm&#9;PSI&#9;JAVA://cn.xiaowenjie.springconfigs.MyAuthorizingRealm" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533980682281" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533983583627" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/chart/blog/src/main/java/cn/xiaowenjie" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/blog" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -501,7 +452,7 @@
     <property name="project.structure.proportion" value="0.15527344" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -552,18 +503,28 @@
       <updated>1533962129868</updated>
       <workItem from="1533962134227" duration="4987000" />
       <workItem from="1533967236219" duration="951000" />
-      <workItem from="1533977129148" duration="3708000" />
+      <workItem from="1533977129148" duration="6376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9646000" />
+    <option name="totallyTimeSpent" value="12314000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22314675" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4954955" visible="true" weight="0.11649016" />
+      <window_info id="Structure" order="1" sideWeight="0.5045045" side_tool="true" weight="0.22314675" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -572,24 +533,24 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32840723" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.635468" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29392448" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32840723" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32840723" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.4039409" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32840723" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32840723" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.11497731" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.17397882" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.17397882" />
       <window_info anchor="right" id="SciView" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
@@ -608,86 +569,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/src/main/java/cn/xiaowenjie/springconfigs/RedisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1053">
-          <caret line="56" column="48" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/main/java/cn/xiaowenjie/springconfigs/ShiroConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2673">
-          <caret line="124" column="64" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/main/java/cn/xiaowenjie/springconfigs/DruidStatFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/beans/TreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/beans/UploadRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/caches/CacheNames.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/caches/ClearCacheTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/daos/EndDataDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/AppController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/CacheController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/TreeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="505">
@@ -733,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="87" column="34" selection-start-line="87" selection-start-column="34" selection-end-line="87" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/jms/JMSType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -780,16 +654,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chart/blog/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/chartbeans/Entry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/chartbeans/EndData.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -916,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/controllers/BlogController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -981,8 +838,119 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/beans/Blog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
+        <state relative-caret-position="215">
           <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/chartbeans/Entry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/controllers/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/caches/CacheNames.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/consts/ObjType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/i18n/messages_en.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/resources/i18n/messages_zh_CN.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/utils/CheckUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/utils/UserUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <element signature="e#1299#1300#0" expanded="true" />
+            <element signature="e#1339#1340#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/daos/FavoriteDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="17" column="66" lean-forward="true" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/controllers/FavoriteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="42" column="48" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
+          <folding>
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1473#1474#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/services/FavoriteService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
         </state>
       </provider>
     </entry>

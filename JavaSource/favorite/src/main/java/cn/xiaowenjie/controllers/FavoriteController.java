@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 /**
- * 配置相关的controller，支持跨域
+ * 收藏相关的controller，支持跨域
  * 
  * @author 肖文杰 https://github.com/xwjie/
  *
@@ -31,27 +31,21 @@ public class FavoriteController {
 		return new ResultBean<Collection<Favorite>>(favoriteService.getAll(type));
 	}
 
-//	@GetMapping(value = "/list")
-//	public ResultBean<PageResp<Config>> list(PageReq param) {
-//		return new ResultBean<>(configService.listPage(param.toPageable(), param.getKeyword()));
-//	}
-//
-//	/**
-//	 * 新增配置
-//	 *
-//	 * FIXME 同时支持json格式和表单格式
-//	 *
-//	 * @param config
-//	 * @return
-//	 */
-//	@PostMapping("/add")
-//	public ResultBean<Long> add(@RequestBody Config config) {
-//		System.out.println(configService.getClass());
-//		return new ResultBean<Long>(configService.add(config));
-//	}
-//
-//	@PostMapping("/delete")
-//	public ResultBean<Boolean> delete(long id) {
-//		return new ResultBean<Boolean>(configService.delete(id));
-//	}
+	/**
+	 * 新增配置
+	 *
+	 * FIXME 同时支持json格式和表单格式
+	 *
+	 * @param favorite
+	 * @return
+	 */
+	@PostMapping("/add")
+	public ResultBean<Long> add(@RequestBody Favorite favorite) {
+		return new ResultBean<Long>(favoriteService.add(favorite));
+	}
+
+	@PostMapping("/delete")
+	public ResultBean<Boolean> delete(long id) {
+		return new ResultBean<Boolean>(favoriteService.delete(id));
+	}
 }

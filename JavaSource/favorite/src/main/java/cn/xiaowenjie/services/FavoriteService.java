@@ -1,11 +1,11 @@
 package cn.xiaowenjie.services;
 
-import cn.xiaowenjie.beans.Config;
+import cn.xiaowenjie.beans.Favorite;
 import cn.xiaowenjie.beans.Favorite;
 import cn.xiaowenjie.common.beans.PageResp;
 import cn.xiaowenjie.common.consts.Roles;
 import cn.xiaowenjie.common.utils.UserUtil;
-import cn.xiaowenjie.daos.ConfigDao;
+import cn.xiaowenjie.daos.FavoriteDao;
 import cn.xiaowenjie.daos.FavoriteDao;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
@@ -42,88 +42,76 @@ public class FavoriteService {
 
         return data;
     }
-//
-//    /**
-//     *  增加配置，需要管理员权限
-//     * @param config
-//     * @return
-//     */
-//    @RequiresRoles(Roles.ADMIN)
-//    public long add(Config config) {
-//        // 参数校验
-//        notNull(config, "param.is.null");
-//        notEmpty(config.getName(), "name.is.null");
-//        notEmpty(config.getValue(), "value.is.null");
-//
-//        // 校验通过后打印重要的日志
-//        log.info("add config:" + config);
-//
-//        // 校验重复
-//        check(null == dao.findByName(config.getName()), "name.repeat");
-//
-//        config = dao.save(config);
-//
-//        // 修改操作需要打印操作结果
-//        log.info("add config success, id:" + config.getId());
-//
-//        return config.getId();
-//    }
-//
-//    /**
-//     *  根据id删除配置项
-//     *
-//     *  管理员或者自己创建的才可以删除掉
-//     * @param id
-//     * @return
-//     */
-//    @RequiresRoles(Roles.ADMIN)
-//    public boolean delete(long id) {
-//
-//        Config config = dao.findOne(id);
-//
-//        // 参数校验
-//        check(config != null, "id.error", id);
-//
-//        // 判断是否可以删除
-//        check(canDelete(config), "no.permission");
-//
-//        dao.delete(id);
-//
-//        // 修改操作需要打印操作结果
-//        log.info("delete config success, id:" + id);
-//
-//        return true;
-//    }
-//
-//    /**
-//     * 自己创建的或者管理员可以删除数据
-//     * 判断逻辑变化可能性大，抽取一个函数
-//     *
-//     * @param config
-//     * @return
-//     */
-//    private boolean canDelete(Config config) {
-//        return UserUtil.getUser().equals(config.getCreator()) || UserUtil.isAdmin();
-//    }
-//
-//    /**
-//     *  分页查找
-//     *
-//     * @param pageable
-//     * @param keyword
-//     * @return
-//     */
-//    public PageResp<Config> listPage(Pageable pageable, String keyword) {
-//        if (StringUtils.isEmpty(keyword)) {
-//            return new PageResp<Config>(dao.findAll(pageable));
-//        } else {
-//            // 也可以用springjpa 的 Specification 来实现查找
-//            return new PageResp<>(dao.findAllByKeyword(keyword, pageable));
-//        }
-//    }
-//
-//    public Config getByName(String name) {
-//        return dao.findByName(name);
-//    }
+
+    /**
+     * 增加配置，需要管理员权限
+     *
+     * @param favorite
+     * @return
+     */
+    public long add(Favorite favorite) {
+        // 参数校验
+        notNull(favorite);
+
+        check(favorite.getObjType() > 0);
+        check(favorite.getObjId() > 0L);
+
+        // 校验通过后打印重要的日志
+        log.info("add favorite:" + favorite);
+
+        long userId = UserUtil.getUserId();
+
+        // 校验重复
+        Favorite favoriteNew = dao.findByUserIdAndObjTypeAndObjId(userId, favorite.getObjType(), favorite.getObjId());
+
+        // 如果没有记录，就新增
+        if (favoriteNew == null) {
+            // 设置用户id
+            favorite.setUserId(userId);
+
+            favoriteNew = dao.save(favorite);
+
+            // 修改操作需要打印操作结果
+            log.info("add favorite success, id:" + favoriteNew.getId());
+        }
+
+        return favoriteNew.getId();
+    }
+
+    /**
+     * 根据id删除配置项
+     * <p>
+     * 管理员或者自己创建的才可以删除掉
+     *
+     * @param id
+     * @return
+     */
+    public boolean delete(long id) {
+        Favorite favorite = dao.findOne(id);
+
+        // 参数校验
+        check(favorite != null, "id.error", id);
+
+        // 判断是否可以删除
+        check(canDelete(favorite), "no.permission");
+
+        dao.delete(id);
+
+        // 修改操作需要打印操作结果
+        log.info("delete favorite success, id:" + id);
+
+        return true;
+    }
+
+    /**
+     * 自己创建的或者管理员可以删除数据
+     * 判断逻辑变化可能性大，抽取一个函数
+     *
+     * @param favorite
+     * @return
+     */
+    private boolean canDelete(Favorite favorite) {
+        return UserUtil.getUserId() == favorite.getUserId() || UserUtil.isAdmin();
+    }
 
 }

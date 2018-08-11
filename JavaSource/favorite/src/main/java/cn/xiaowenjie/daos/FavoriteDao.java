@@ -17,7 +17,8 @@ import java.util.List;
  */
 public interface FavoriteDao extends PagingAndSortingRepository<Favorite, Long> {
     List<Favorite> findAllByObjType(int type);
-    // Config findByName(String name);
+
+    Favorite findByUserIdAndObjTypeAndObjId(long userId, int objType, long objId);
 
 	// @Query(value = "select t from Config t where t.name like %?1% or t.value like %?1% or t.description like %?1%", nativeQuery = false)
 	// Page<Config> findAllByKeyword(String keyword, Pageable pageable);

@@ -23,6 +23,12 @@ public class CheckUtil {
 		}
 	}
 
+	public static void check(boolean condition) {
+		if (!condition) {
+			fail("field.invalid");
+		}
+	}
+
 	public static void notEmpty(String str, String msgKey, Object... args) {
 		if (str == null || str.isEmpty()) {
 			fail(msgKey, args);
@@ -32,6 +38,12 @@ public class CheckUtil {
 	public static void notNull(Object obj, String msgKey, Object... args) {
 		if (obj == null) {
 			fail(msgKey, args);
+		}
+	}
+
+	public static void notNull(Object obj) {
+		if (obj == null) {
+			notNull(obj, "param.is.null");
 		}
 	}
 
