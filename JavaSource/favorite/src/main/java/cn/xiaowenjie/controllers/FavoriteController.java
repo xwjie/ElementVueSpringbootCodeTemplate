@@ -10,6 +10,7 @@ import cn.xiaowenjie.services.FavoriteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Collection;
 
 /**
@@ -40,7 +41,7 @@ public class FavoriteController {
 	 * @return
 	 */
 	@PostMapping("/add")
-	public ResultBean<Long> add(@RequestBody Favorite favorite) {
+	public ResultBean<Long> add(@RequestBody @Valid Favorite favorite) {
 		return new ResultBean<Long>(favoriteService.add(favorite));
 	}
 

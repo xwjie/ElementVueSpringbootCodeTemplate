@@ -71,6 +71,7 @@ public class JMSObjectComsumer {
         Favoritable bizObj = (Favoritable) dao.findOne(objId);
 
         // 更新收藏数量字段
+        // FIXME 也可以在DAO上做，会少一些SQL
         int count = favoriteDao.countByObjTypeAndObjId(objType, objId);
         bizObj.setFavoriteCount(count);
 

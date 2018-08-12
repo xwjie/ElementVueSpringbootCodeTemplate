@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 @Entity
 @Data
@@ -22,8 +23,10 @@ public class Favorite extends BaseEntity {
 
 	private long userId;
 
+	@Min(1)
 	private int objType;
 
+	@Min(1)
 	private long objId;
 
 }
