@@ -3,10 +3,12 @@ package cn.xiaowenjie.beans;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import cn.xiaowenjie.jpa.JPAListener;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -21,6 +23,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @MappedSuperclass
 @EqualsAndHashCode(of = "id")
+@EntityListeners(value = JPAListener.class)
 public abstract class BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;

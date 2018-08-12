@@ -20,6 +20,8 @@ public interface FavoriteDao extends PagingAndSortingRepository<Favorite, Long> 
 
     Favorite findByUserIdAndObjTypeAndObjId(long userId, int objType, long objId);
 
-	// @Query(value = "select t from Config t where t.name like %?1% or t.value like %?1% or t.description like %?1%", nativeQuery = false)
+    int countByObjTypeAndObjId(int objType, long objId);
+
+    // @Query(value = "select t from Config t where t.name like %?1% or t.value like %?1% or t.description like %?1%", nativeQuery = false)
 	// Page<Config> findAllByKeyword(String keyword, Pageable pageable);
 }

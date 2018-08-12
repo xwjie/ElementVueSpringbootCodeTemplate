@@ -1,7 +1,8 @@
-package cn.xiaowenjie.springconfigs;
+package cn.xiaowenjie.jpa;
 
 import cn.xiaowenjie.common.rbac.User;
 import cn.xiaowenjie.common.utils.UserUtil;
+import cn.xiaowenjie.jpa.JPAThreadLocal;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
@@ -17,9 +18,16 @@ public class JPAConfig {
 
 			@Override
 			public User getCurrentAuditor() {
-				System.out.println("\n\nJPAConfig.auditorAware().new AuditorAware() {...}.getCurrentAuditor()");
+				//System.out.println("\n\nJPAConfig.auditorAware().new AuditorAware() {...}.getCurrentAuditor()");
 
-				return UserUtil.getUser();
+				// 后台任务，不需要登录
+				// TODO 后台创建的生活，可能就会为空
+				if (JPAThreadLocal.background()){
+					return null;
+				}
+				else {
+					return UserUtil.getUser();
+				}
 			}
 		};
 	}

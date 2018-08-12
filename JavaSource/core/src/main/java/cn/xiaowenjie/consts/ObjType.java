@@ -5,4 +5,5 @@ package cn.xiaowenjie.consts;
  */
 public interface ObjType {
     int BLOG = 1;
+
 }
