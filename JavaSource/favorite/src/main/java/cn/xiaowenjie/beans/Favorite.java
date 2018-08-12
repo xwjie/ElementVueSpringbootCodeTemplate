@@ -9,6 +9,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 
+/**
+ *  收藏类
+ * @author  晓风轻
+ *
+ *  （用户id+业务对象类型+业务对象id）唯一索引为了防止并发操作数据错误
+ */
 @Entity
 @Data
 @Table(
