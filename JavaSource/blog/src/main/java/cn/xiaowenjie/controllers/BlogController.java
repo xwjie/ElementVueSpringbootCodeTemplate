@@ -9,6 +9,7 @@ import cn.xiaowenjie.services.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Collection;
 
 /**
@@ -42,8 +43,7 @@ public class BlogController {
 	 * @return
 	 */
 	@PostMapping("/add")
-	public ResultBean<Long> add(@RequestBody Blog blog) {
-		System.out.println(blogService.getClass());
+	public ResultBean<Long> add(@RequestBody @Valid Blog blog) {
 		return new ResultBean<Long>(blogService.add(blog));
 	}
 

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbb20273-986a-48ca-a724-e0efd05d7360" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/aop/ValidExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/aop/ValidExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java" beforeDir="false" afterPath="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/beans/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/beans/Blog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/controllers/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/controllers/BlogController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,7 +73,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="7" />
-          <entry key="java" value="146" />
+          <entry key="java" value="148" />
           <entry key="messages" value="1" />
           <entry key="properties" value="2" />
           <entry key="xml" value="13" />
@@ -82,7 +82,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="146" />
+          <entry key="JAVA" value="148" />
           <entry key="Properties" value="2" />
           <entry key="ResourceBundle" value="1" />
           <entry key="XML" value="13" />
@@ -91,14 +91,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="20" />
-          <entry key="java" value="2360" />
+          <entry key="java" value="2396" />
           <entry key="properties" value="55" />
           <entry key="xml" value="95" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2360" />
+          <entry key="JAVA" value="2396" />
           <entry key="PLAIN_TEXT" value="20" />
           <entry key="Properties" value="55" />
           <entry key="XML" value="95" />
@@ -108,63 +108,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/beans/Blog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java">
+        <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/controllers/BlogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/controllers/FavoriteController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="43" column="57" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/aop/ControllerAOP.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/aop/ValidExceptionHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="202">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1152#1153#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/beans/ResultBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
-              <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-              <folding>
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#477#478#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.12.RELEASE/spring-webmvc-4.3.12.RELEASE.jar!/org/springframework/web/servlet/mvc/support/DefaultHandlerExceptionResolver.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="191" column="5" lean-forward="true" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -220,7 +180,6 @@
         <option value="$PROJECT_DIR$/chart/blog/src/main/java/cn/xiaowenjie/beans/BlogModule.java" />
         <option value="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/services/BlogService.java" />
         <option value="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/BlogModule.java" />
-        <option value="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/controllers/BlogController.java" />
         <option value="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/daos/BlogDao.java" />
         <option value="$PROJECT_DIR$/main/pom.xml" />
         <option value="$PROJECT_DIR$/chart/pom.xml" />
@@ -238,7 +197,6 @@
         <option value="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/features/Favoritable.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/jpa/JMSObjectComsumer.java" />
         <option value="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/daos/FavoriteDao.java" />
-        <option value="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/beans/Blog.java" />
         <option value="$PROJECT_DIR$/main/src/main/java/cn/xiaowenjie/jpa/JPAThreadLocal.java" />
         <option value="$PROJECT_DIR$/main/src/main/java/cn/xiaowenjie/springconfigs/JPAConfig.java" />
         <option value="$PROJECT_DIR$/main/src/main/java/cn/xiaowenjie/jpa/JPAConfig.java" />
@@ -250,6 +208,8 @@
         <option value="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/aop/ExceptionHandler.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/aop/ValidExceptionHandler.java" />
         <option value="$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java" />
+        <option value="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/beans/Blog.java" />
+        <option value="$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/controllers/BlogController.java" />
       </list>
     </option>
   </component>
@@ -323,6 +283,27 @@
           <expand>
             <path>
               <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="blog" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
+              <item name="beans" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
+              <item name="blog" type="616d4139:PackageViewModuleNode" />
+              <item name="cn.xiaowenjie" type="1f31426a:PackageElementNode" />
+              <item name="controllers" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaSource" type="58d84e3e:PackageViewProjectNode" />
               <item name="core" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
@@ -380,7 +361,7 @@
     <property name="SearchEverywhereHistoryKey" value="DefaultHandlerExceptionResolver&#9;PSI&#9;JAVA://org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver&#10;Favorite&#9;PSI&#9;JAVA://cn.xiaowenjie.beans.Favorite&#10;MyAuthorizingRealm&#9;PSI&#9;JAVA://cn.xiaowenjie.springconfigs.MyAuthorizingRealm" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534076123754" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534076385925" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/main/src/main/java/cn/xiaowenjie" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/blog" />
@@ -444,12 +425,12 @@
       <workItem from="1533977129148" duration="8241000" />
       <workItem from="1534027248008" duration="5559000" />
       <workItem from="1534072659216" duration="236000" />
-      <workItem from="1534073056075" duration="2977000" />
+      <workItem from="1534073056075" duration="3278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22951000" />
+    <option name="totallyTimeSpent" value="23252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -474,7 +455,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.19704433" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.16748768" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.36124796" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -545,13 +526,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/chart/src/main/java/cn/xiaowenjie/chartbeans/Entry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="98">
@@ -771,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/beans/Blog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/5.0.12.Final/hibernate-entitymanager-5.0.12.Final.jar!/org/hibernate/jpa/event/internal/jpa/ListenerCallback.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
@@ -867,7 +834,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/cn/xiaowenjie/common/beans/ResultBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
+        <state relative-caret-position="-8">
           <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
           <folding>
             <element signature="e#463#464#0" expanded="true" />
@@ -913,8 +880,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/favorite/src/main/java/cn/xiaowenjie/beans/Favorite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state relative-caret-position="-332">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/beans/Blog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog/src/main/java/cn/xiaowenjie/controllers/BlogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#1152#1153#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

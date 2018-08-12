@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @lombok.Data
@@ -14,8 +15,10 @@ import javax.persistence.*;
 @EntityListeners(AuditingEntityListener.class)
 public class Blog extends BaseEntity implements Favoritable {
 
+    @Size(min = 3, max = 30) // , message = "{javax.validation.constraints.Size.message}"
     private String title;
 
+    @Size(min = 10, max = 30000)
     @Lob
     private String  body;
 
