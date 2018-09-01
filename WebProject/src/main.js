@@ -1,42 +1,27 @@
 import Vue from 'vue';
 
-
 import VueRouter from 'vue-router';
 import Routers from './router';
 import Vuex from 'vuex';
 import Util from './libs/util';
-import App from './app.vue';
-import 'element-ui/lib/theme-chalk/index.css'
+import App from './App.vue';
 import store from './stores';
-
-//
-import VueI18n from 'vue-i18n';
-Vue.use(VueI18n);
-
-import enLocale from 'element-ui/lib/locale/lang/en'
-import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
-
-// 切换语言使用
-import locale from 'element-ui/lib/locale'
-
-import UI from 'element-ui'
-
-Vue.use(UI,{ enLocale, zhLocale})
-
-// 多语言配置
-Vue.locale('zh', zhLocale)
-Vue.locale('en', enLocale)
-Vue.config.lang = 'zh-cn'
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
+// ---------------------------------------- element ui
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
 
-// charts
+Vue.config.lang = 'zh-cn'
+
+// ---------------------------------------- charts
 import VCharts from 'v-charts';
 Vue.use(VCharts)
 
-// 工具类
+// ---------------------------------------- 提示信息工具类
 Vue.prototype.info = function (msg) {
     //this.$message(msg);
     this.$message({
@@ -53,16 +38,14 @@ Vue.prototype.confirm = function () {
     return this.$confirm(...arguments);
 }
 
-// 请求
+// ---------------------------------------- 请求
 Vue.prototype.ajax = Util.ajax;
 
-// commons 组件
+// ----------------------------------------  组件
 import { registerCommonComponents } from './commons';
 registerCommonComponents();
 
-//
 import { registerComponents } from './components';
-
 registerComponents();
 
 // 定义全局filter
@@ -71,11 +54,14 @@ Vue.filter('filterKeyword', function (value, key) {
     return value.filter(e => Util.isMatch(e, key));
 });
 
-// event bus
+// ---------------------------------------- event bus
 import VueBus from 'vue-bus';
+
+import './plugins/element.js'
 Vue.use(VueBus);
 
-// 自动设置语言
+
+// ---------------------------------------- 自动设置语言
 function switchLanguage(value){
     var lang = value;
 
@@ -92,14 +78,11 @@ function switchLanguage(value){
     Vue.config.lang = lang;
 
     console.log("language", lang);
-    locale.use(lang);    
 }
-
 
 switchLanguage();
 
-
-// 路由配置
+// ---------------------------------------- 路由配置
 const RouterConfig = {
     mode: 'history',
     routes: Routers
@@ -109,7 +92,7 @@ const router = new VueRouter(RouterConfig);
 let loading;
 
 router.beforeEach((to, from, next) => {
-    loading = UI.Loading.service({ fullscreen: true });
+    loading = ElementUI.Loading.service({ fullscreen: true });
     Util.title(to.meta.title);
     next();
 });
@@ -146,6 +129,8 @@ var instance = new Vue({
 
 
 instance.$bus.on("lang-change", switchLanguage);
+
+// ---------------------------------------- 工具类
 
 // 对Date的扩展，将 Date 转化为指定格式的String
 // 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
