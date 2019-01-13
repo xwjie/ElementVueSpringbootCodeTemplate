@@ -1,5 +1,6 @@
 package cn.xiaowenjie.common.beans;
 
+import com.alibaba.fastjson.annotation.JSONType;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort.Direction;
@@ -14,6 +15,7 @@ import lombok.Data;
  *
  */
 @Data
+@JSONType(ignores = "pageable") // 不加fastjson toJson的时候 报 StackOverflowError
 public class PageReq {
 
 	private int page = 1;
